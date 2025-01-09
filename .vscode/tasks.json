@@ -1,0 +1,43 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "flutter: Run coverage",
+            "type": "shell",
+            "command": "cd ${input:flutterFolder} && very_good test --test-randomize-ordering-seed random --coverage && genhtml ./coverage/lcov.info -o coverage --dark-mode && open ./coverage/index.html",
+            "problemMatcher": []
+        },
+        {
+            "label": "Dart run build_runner",
+            "type": "shell",
+            "command": "cd ${input:flutterFolder} && dart run build_runner build --delete-conflicting-outputs",
+            "problemMatcher": []
+        },
+        {
+            "label": "Clean and regenerate iOS pods",
+            "type": "shell",
+            "command": "cd ios && pod repo remove trunk && pod repo update && pod update",
+            "problemMatcher": []
+        },
+        {
+            "label": "Generate l10n",
+            "type": "shell",
+            "command": "flutter gen-l10n",
+            "problemMatcher": []
+        },
+    ],
+    "inputs": [
+        {
+            "id": "flutterFolder",
+            "description": "Write the folder where you want to run the coverage ",
+            "default": "packages/",
+            "type": "pickString",
+            "options": [
+                "${workspaceFolder}",
+                "packages/swiftify_data_source",
+            ],
+        }
+    ]
+}
