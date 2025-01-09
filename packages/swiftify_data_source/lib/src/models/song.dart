@@ -45,6 +45,7 @@ class Song extends Equatable {
   /// The video URL of the song
   final String videoUrl;
 
+  /// The genres of the song
   final List<String> genres;
 
   @override
