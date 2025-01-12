@@ -22,6 +22,13 @@ Future<Response> _get(RequestContext context) async {
   final dataSource = context.read<SwiftifyDataSource>();
 
   final albums = await dataSource.getAlbums();
+  if (albums.isEmpty) {
+    return Response(
+      statusCode: HttpStatus.notFound,
+      body: 'Albums not found.',
+    );
+  }
+
   final albumsJson = albums.map((album) => album.toJson()).toList();
 
   return Response.json(body: albumsJson);

@@ -16,4 +16,5 @@ Map<String, dynamic> _$SongToJson(Song instance) => <String, dynamic>{
       'title': instance.title,
       'album_id': instance.albumId,
       'song_id': instance.songId,
+      'lyrics': instance.lyrics,
     };

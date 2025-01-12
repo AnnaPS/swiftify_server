@@ -18,4 +18,8 @@ class SwiftifyRepository implements SwiftifyDataSource {
   @override
   Future<List<Song>> getSongsByAlbum({required String albumId}) async =>
       _apiClient.getSongsByAlbum(albumId: albumId);
+
+  @override
+  Future<String> getLyricsBySong({required String songId}) async =>
+      _apiClient.getLyricsBySong(songId: songId);
 }

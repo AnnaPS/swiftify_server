@@ -7,4 +7,7 @@ abstract class SwiftifyDataSource {
 
   /// Fetches all songs for the given [albumId].
   Future<List<Song>> getSongsByAlbum({required String albumId});
+
+  /// Fetches lyrics for the given [songId].
+  Future<String> getLyricsBySong({required String songId});
 }

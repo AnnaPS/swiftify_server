@@ -5,16 +5,6 @@ import 'package:dart_frog/dart_frog.dart';
 import 'package:swiftify_data_source/swiftify_data_source.dart';
 
 FutureOr<Response> onRequest(RequestContext context, String albumId) async {
-  final dataSource = context.read<SwiftifyDataSource>();
-  final songs = await dataSource.getSongsByAlbum(albumId: albumId);
-
-  if (songs.isEmpty) {
-    return Response(
-      statusCode: HttpStatus.notFound,
-      body: 'Songs not found by the given album id.',
-    );
-  }
-
   switch (context.request.method) {
     case HttpMethod.get:
       return _get(context, albumId: albumId);
@@ -31,6 +21,14 @@ FutureOr<Response> onRequest(RequestContext context, String albumId) async {
 Future<Response> _get(RequestContext context, {required String albumId}) async {
   final dataSource = context.read<SwiftifyDataSource>();
   final songs = await dataSource.getSongsByAlbum(albumId: albumId);
+
+  if (songs.isEmpty) {
+    return Response(
+      statusCode: HttpStatus.notFound,
+      body: 'Songs not found by the given album id.',
+    );
+  }
+
   final songsJson = songs.map((song) => song.toJson()).toList();
 
   return Response.json(body: songsJson);

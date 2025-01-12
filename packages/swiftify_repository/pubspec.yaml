@@ -7,10 +7,10 @@ environment:
   sdk: ^3.6.0
 
 dependencies:
-  swiftify_data_source:
-    path: ../swiftify_data_source
   api_client:
     path: ../api_client
+  swiftify_data_source:
+    path: ../swiftify_data_source
 
 dev_dependencies:
   mocktail: ^1.0.4

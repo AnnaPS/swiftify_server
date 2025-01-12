@@ -14,6 +14,7 @@ class Song extends Equatable {
     this.title = '',
     this.albumId = 0,
     this.songId = 0,
+    this.lyrics = '',
   });
 
   /// Create a [Song] from a Map<String, dynamic>
@@ -31,22 +32,26 @@ class Song extends Equatable {
   /// The id of the song
   final int songId;
 
+  @JsonKey(includeFromJson: false, includeToJson: true)
+
+  /// The lyrics of the song
+  /// This field is not included when deserializing from JSON
+  final String lyrics;
+
   @override
-  List<Object?> get props => [
-        title,
-        albumId,
-        songId,
-      ];
+  List<Object?> get props => [title, albumId, songId, lyrics];
 
   Song copyWith({
     String? title,
     int? albumId,
     int? songId,
+    String? lyrics,
   }) {
     return Song(
       title: title ?? this.title,
       albumId: albumId ?? this.albumId,
       songId: songId ?? this.songId,
+      lyrics: lyrics ?? this.lyrics,
     );
   }
 }
