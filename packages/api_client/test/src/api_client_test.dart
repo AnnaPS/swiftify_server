@@ -1,11 +1,11 @@
 // ignore_for_file: prefer_const_constructors
-import 'package:swiftify_data_source/swiftify_data_source.dart';
 import 'package:test/test.dart';
+import 'package:api_client/api_client.dart';
 
 void main() {
-  group('SwiftifyDataSource', () {
+  group('ApiClient', () {
     test('can be instantiated', () {
-      expect(SwiftifyDataSource(), isNotNull);
+      expect(ApiClient(), isNotNull);
     });
   });
 }

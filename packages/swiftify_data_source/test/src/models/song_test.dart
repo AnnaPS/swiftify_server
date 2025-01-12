@@ -4,25 +4,15 @@ import 'package:test/test.dart';
 void main() {
   group('Song', () {
     const song = Song(
-      artist: 'artist',
-      albumId: AlbumIdEnum.reputation,
-      duration: 1,
-      lyrics: 'lyrics',
-      title: 'name',
-      genres: ['genre'],
-      videoUrl: 'videoUrl',
-      trackNumber: 1,
+      albumId: 1,
+      songId: 1,
+      title: 'title',
     );
 
     const song2 = Song(
-      artist: 'artist2',
-      albumId: AlbumIdEnum.folklore,
-      duration: 2,
-      lyrics: 'lyrics2',
-      title: 'name2',
-      genres: ['genre2'],
-      videoUrl: 'videoUrl2',
-      trackNumber: 2,
+      albumId: 2,
+      songId: 2,
+      title: 'title',
     );
 
     test('supports value comparisons', () {

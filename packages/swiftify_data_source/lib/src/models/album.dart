@@ -4,84 +4,47 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'album.g.dart';
 
-/// Enum representing the id of the album
-enum AlbumIdEnum {
-  /// Taylor Swift album
-  @JsonValue('taylor_swift')
-  taylorSwift,
-
-  /// Lover album
-  @JsonValue('lover')
-  lover,
-
-  /// Red (Taylor's version) album
-  @JsonValue('red')
-  red,
-
-  /// Fearless (Taylor's version) album
-  @JsonValue('fearless')
-  fearless,
-
-  /// Speak Now (Taylor's version) album
-  @JsonValue('speak_now')
-  speakNow,
-
-  /// Fearless (Taylor's Version) album
-  @JsonValue('1989')
-  nineteenEightyNine,
-
-  /// Reputation album
-  @JsonValue('reputation')
-  reputation,
-
-  /// Midnights album
-  @JsonValue('midnights')
-  midnights,
-
-  /// Evermore album
-  @JsonValue('evermore')
-  evermore,
-
-  /// Folklore album
-  @JsonValue('folklore')
-  folklore;
-
-  const AlbumIdEnum();
-}
-
 /// {@template album}
 /// A class representing an album
 /// {@endtemplate}
-@JsonSerializable(createToJson: false)
+@JsonSerializable(fieldRename: FieldRename.snake)
 class Album extends Equatable {
   /// {@macro album}
   const Album({
+    this.albumId = 0,
     this.title = '',
-    this.coverImage = '',
-    this.releaseDate,
-    this.id = AlbumIdEnum.taylorSwift,
+    this.albumCover = '',
+    this.artistId = 1,
+    this.releaseDate = '',
   });
 
   /// Converts a [Map<String, dynamic>] to an [Album] object.
   factory Album.fromJson(Map<String, dynamic> json) => _$AlbumFromJson(json);
 
-  /// The album id
-  final AlbumIdEnum id;
+  /// Converts an [Album] object to a [Map<String, dynamic>].
+  Map<String, dynamic> toJson() => _$AlbumToJson(this);
 
-  /// The title of the album
+  /// The album id
+
+  final int albumId;
+
+  /// The album title
   final String title;
 
   /// The album cover image in URL format
-  final String coverImage;
+  @JsonKey(includeFromJson: false)
+  final String albumCover;
 
-  /// The release date of the album
-  final DateTime? releaseDate;
+  /// The artist id of the album
+  final int artistId;
+
+  final String releaseDate;
 
   @override
   List<Object?> get props => [
         title,
-        coverImage,
-        id,
+        albumCover,
+        artistId,
         releaseDate,
       ];
 }

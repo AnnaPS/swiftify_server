@@ -3,18 +3,18 @@ import 'package:test/test.dart';
 
 void main() {
   group('Album', () {
-    final album = Album(
-      id: AlbumIdEnum.reputation,
+    const album = Album(
+      albumId: 1,
       title: 'Reputation',
-      coverImage: 'albumCover',
-      releaseDate: DateTime(2021, 1, 12),
+      albumCover: 'albumCover',
+      releaseDate: '2017-11-10',
     );
 
-    final album2 = Album(
-      id: AlbumIdEnum.red,
+    const album2 = Album(
+      albumId: 2,
       title: 'Red',
-      coverImage: 'albumCover2',
-      releaseDate: DateTime(2021, 1, 13),
+      albumCover: 'albumCover2',
+      releaseDate: '2012-10-22',
     );
 
     test('supports value comparisons', () {
@@ -27,7 +27,7 @@ void main() {
         'title': 'Taylor Swift',
         'id': 'taylor_swift',
         'coverImage': 'coverImage',
-        'releaseDate': DateTime(2021, 1, 12).toIso8601String(),
+        'releaseDate': '2006-10-24',
       };
 
       final album = Album.fromJson(json);

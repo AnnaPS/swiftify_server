@@ -7,24 +7,15 @@ part of 'album.dart';
 // **************************************************************************
 
 Album _$AlbumFromJson(Map<String, dynamic> json) => Album(
+      albumId: (json['album_id'] as num?)?.toInt() ?? 0,
       title: json['title'] as String? ?? '',
-      coverImage: json['coverImage'] as String? ?? '',
-      releaseDate: json['releaseDate'] == null
-          ? null
-          : DateTime.parse(json['releaseDate'] as String),
-      id: $enumDecodeNullable(_$AlbumIdEnumEnumMap, json['id']) ??
-          AlbumIdEnum.taylorSwift,
+      artistId: (json['artist_id'] as num?)?.toInt() ?? 1,
+      releaseDate: json['release_date'] as String? ?? '',
     );
 
-const _$AlbumIdEnumEnumMap = {
-  AlbumIdEnum.taylorSwift: 'taylor_swift',
-  AlbumIdEnum.lover: 'lover',
-  AlbumIdEnum.red: 'red',
-  AlbumIdEnum.fearless: 'fearless',
-  AlbumIdEnum.speakNow: 'speak_now',
-  AlbumIdEnum.nineteenEightyNine: '1989',
-  AlbumIdEnum.reputation: 'reputation',
-  AlbumIdEnum.midnights: 'midnights',
-  AlbumIdEnum.evermore: 'evermore',
-  AlbumIdEnum.folklore: 'folklore',
-};
+Map<String, dynamic> _$AlbumToJson(Album instance) => <String, dynamic>{
+      'album_id': instance.albumId,
+      'title': instance.title,
+      'artist_id': instance.artistId,
+      'release_date': instance.releaseDate,
+    };

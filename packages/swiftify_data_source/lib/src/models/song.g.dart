@@ -7,29 +7,13 @@ part of 'song.dart';
 // **************************************************************************
 
 Song _$SongFromJson(Map<String, dynamic> json) => Song(
-      albumId: $enumDecodeNullable(_$AlbumIdEnumEnumMap, json['albumId']) ??
-          AlbumIdEnum.taylorSwift,
       title: json['title'] as String? ?? '',
-      artist: json['artist'] as String? ?? '',
-      duration: (json['duration'] as num?)?.toInt() ?? 0,
-      lyrics: json['lyrics'] as String? ?? '',
-      trackNumber: (json['trackNumber'] as num?)?.toInt() ?? 0,
-      videoUrl: json['videoUrl'] as String? ?? '',
-      genres: (json['genres'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
+      albumId: (json['album_id'] as num?)?.toInt() ?? 0,
+      songId: (json['song_id'] as num?)?.toInt() ?? 0,
     );
 
-const _$AlbumIdEnumEnumMap = {
-  AlbumIdEnum.taylorSwift: 'taylor_swift',
-  AlbumIdEnum.lover: 'lover',
-  AlbumIdEnum.red: 'red',
-  AlbumIdEnum.fearless: 'fearless',
-  AlbumIdEnum.speakNow: 'speak_now',
-  AlbumIdEnum.nineteenEightyNine: '1989',
-  AlbumIdEnum.reputation: 'reputation',
-  AlbumIdEnum.midnights: 'midnights',
-  AlbumIdEnum.evermore: 'evermore',
-  AlbumIdEnum.folklore: 'folklore',
-};
+Map<String, dynamic> _$SongToJson(Song instance) => <String, dynamic>{
+      'title': instance.title,
+      'album_id': instance.albumId,
+      'song_id': instance.songId,
+    };

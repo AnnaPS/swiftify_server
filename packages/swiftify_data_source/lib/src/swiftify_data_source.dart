@@ -1,7 +1,10 @@
-/// {@template swiftify_data_source}
-/// A generic interface for managing albums and songs.
-/// {@endtemplate}
-class SwiftifyDataSource {
-  /// {@macro swiftify_data_source}
-  const SwiftifyDataSource();
+import 'package:swiftify_data_source/swiftify_data_source.dart';
+
+/// An interface for managing albums and songs.
+abstract class SwiftifyDataSource {
+  /// Fetches all albums.
+  Future<List<Album>> getAlbums();
+
+  /// Fetches all songs for the given [albumId].
+  Future<List<Song>> getSongsByAlbum({required String albumId});
 }
