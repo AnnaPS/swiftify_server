@@ -26,13 +26,25 @@ void main() {
       final json = <String, dynamic>{
         'title': 'Taylor Swift',
         'id': 'taylor_swift',
-        'coverImage': 'coverImage',
+        'albumCover': 'albumCover',
         'releaseDate': '2006-10-24',
       };
 
       final album = Album.fromJson(json);
 
       expect(album, equals(album));
+    });
+
+    test('toJson', () {
+      final json = <String, dynamic>{
+        'title': 'Reputation',
+        'album_id': 1,
+        'album_cover': 'albumCover',
+        'release_date': '2017-11-10',
+        'artist_id': 1,
+      };
+
+      expect(album.toJson(), equals(json));
     });
   });
 }

@@ -32,7 +32,7 @@ class Album extends Equatable {
   final String title;
 
   /// The album cover image in URL format
-  @JsonKey(includeFromJson: false)
+  @JsonKey(includeFromJson: false, includeToJson: true)
   final String albumCover;
 
   /// The artist id of the album

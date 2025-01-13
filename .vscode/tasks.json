@@ -36,7 +36,9 @@
             "type": "pickString",
             "options": [
                 "${workspaceFolder}",
+                "packages/api_client",
                 "packages/swiftify_data_source",
+                "packages/swiftify_data_repository"
             ],
         }
     ]
