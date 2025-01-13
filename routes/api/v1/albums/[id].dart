@@ -22,13 +22,6 @@ Future<Response> _get(RequestContext context, {required String albumId}) async {
   final dataSource = context.read<SwiftifyDataSource>();
   final songs = await dataSource.getSongsByAlbum(albumId: albumId);
 
-  if (songs.isEmpty) {
-    return Response(
-      statusCode: HttpStatus.notFound,
-      body: 'Songs not found by the given album id.',
-    );
-  }
-
   final songsJson = songs.map((song) => song.toJson()).toList();
 
   return Response.json(body: songsJson);
