@@ -1,4 +1,4 @@
-name: swiftify_repository
+name: swiftify_data_repository
 description: A package to request data to firestore.
 version: 0.1.0+1
 publish_to: none

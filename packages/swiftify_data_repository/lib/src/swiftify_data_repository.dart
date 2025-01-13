@@ -1,14 +1,17 @@
 import 'package:api_client/api_client.dart';
 import 'package:swiftify_data_source/swiftify_data_source.dart';
 
-/// {@template swiftify_repository}
+/// {@template swiftify_data_repository}
 /// A package to request data to firestore.
 /// {@endtemplate}
-class SwiftifyRepository implements SwiftifyDataSource {
-  /// {@macro swiftify_repository}
-  SwiftifyRepository({
+class SwiftifyDataRepository implements SwiftifyDataSource {
+  /// {@macro swiftify_data_repository}
+  SwiftifyDataRepository({
     ApiClient? apiClient,
-  }) : _apiClient = apiClient ?? ApiClient();
+  }) : _apiClient = apiClient ??
+            ApiClient(
+              baseUrl: 'https://taylor-swift-api.sarbo.workers.dev',
+            );
 
   final ApiClient _apiClient;
 

@@ -1,8 +1,8 @@
 import 'package:dart_frog/dart_frog.dart';
+import 'package:swiftify_data_repository/swiftify_data_repository.dart';
 import 'package:swiftify_data_source/swiftify_data_source.dart';
-import 'package:swiftify_repository/swiftify_repository.dart';
 
-final _swiftifyRepository = SwiftifyRepository();
+final _swiftifyRepository = SwiftifyDataRepository();
 
 Handler middleware(Handler handler) {
   return handler

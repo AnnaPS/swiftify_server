@@ -8,7 +8,7 @@ on:
   pull_request:
     paths:
       - "packages/swiftify_repository/**"
-      - ".github/workflows/swiftify_repository.yaml"
+      - ".github/workflows/swiftify_data_repository.yaml"
     branches:
       - main
 
@@ -16,4 +16,4 @@ jobs:
   build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/dart_package.yml@v1
     with:
-      working_directory: packages/swiftify_repository
+      working_directory: packages/swiftify_data_repository
