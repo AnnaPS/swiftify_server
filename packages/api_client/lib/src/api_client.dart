@@ -24,7 +24,7 @@ class ApiClient {
   /// Fetches a list of albums from the API
   Future<List<Album>> getAlbums() async {
     final responseBody = await get<List<dynamic>>('albums');
-
+    if (responseBody == null) return <Album>[];
     return responseBody
         .map((albumJson) => Album.fromJson(albumJson as Map<String, dynamic>))
         .toList()
@@ -35,7 +35,7 @@ class ApiClient {
   /// The [albumId] is the id of the album to fetch songs for.
   Future<List<Song>> getSongsByAlbum({required String albumId}) async {
     final responseBody = await get<List<dynamic>>('albums/$albumId');
-
+    if (responseBody == null) return <Song>[];
     final albums = responseBody
         .map((songJson) => Song.fromJson(songJson as Map<String, dynamic>))
         .toList();
@@ -57,7 +57,7 @@ class ApiClient {
   /// The [songId] is the id of the song to fetch lyrics for.
   Future<String> getLyricsBySong({required String songId}) async {
     final data = await get<Map<String, dynamic>>('lyrics/$songId');
-    return data['lyrics'] as String;
+    return data?['lyrics'] as String;
   }
 
   bool _isSuccessful(int statusCode) => statusCode >= 200 && statusCode < 300;
@@ -92,7 +92,7 @@ class ApiClient {
 
   /// GET request to [path].
   /// Returns a [Map] with the response body.
-  Future<T> get<T>(String path) async {
+  Future<T?> get<T>(String path) async {
     late int statusCode;
     try {
       final uri = Uri.parse('$_baseUrl/$path');
