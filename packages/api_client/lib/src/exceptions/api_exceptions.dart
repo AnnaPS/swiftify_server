@@ -54,22 +54,6 @@ class ForbiddenException extends ApiException {
   String toString() => '[ForbiddenException] $error';
 }
 
-/// {@template deserialization_exception}
-/// [Exception] thrown when the object passed from API cannot be
-/// deserialized in the expected way by the app.
-/// {@endtemplate}
-class DeserializationException extends ApiException {
-  /// {@macro deserialization_exception}
-  const DeserializationException(super.error);
-
-  /// {@macro deserialization_exception}
-  const DeserializationException.emptyResponseBody()
-      : super('Empty response body');
-
-  @override
-  String toString() => '[DeserializationException] $error';
-}
-
 /// {@template internal_server_error_exception}
 /// 500 Internal Server Error.
 /// {@endtemplate}
