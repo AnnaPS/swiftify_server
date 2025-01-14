@@ -6,14 +6,14 @@ void main() {
     const album = Album(
       albumId: 1,
       title: 'Reputation',
-      albumCover: 'albumCover',
+      coverAlbum: 'albumCover',
       releaseDate: '2017-11-10',
     );
 
     const album2 = Album(
       albumId: 2,
       title: 'Red',
-      albumCover: 'albumCover2',
+      coverAlbum: 'albumCover2',
       releaseDate: '2012-10-22',
     );
 

@@ -16,7 +16,7 @@ Album _$AlbumFromJson(Map<String, dynamic> json) => Album(
 Map<String, dynamic> _$AlbumToJson(Album instance) => <String, dynamic>{
       'album_id': instance.albumId,
       'title': instance.title,
-      'album_cover': instance.albumCover,
+      'cover_album': instance.coverAlbum,
       'artist_id': instance.artistId,
       'release_date': instance.releaseDate,
     };

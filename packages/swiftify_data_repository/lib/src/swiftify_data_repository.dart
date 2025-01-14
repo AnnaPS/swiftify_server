@@ -18,6 +18,7 @@ class SwiftifyDataRepository implements SwiftifyDataSource {
   @override
   Future<List<Album>> getAlbums() async {
     final responseBody = await _apiClient.get<List<dynamic>>('albums');
+
     return responseBody
         .map((albumJson) => Album.fromJson(albumJson as Map<String, dynamic>))
         .toList()
