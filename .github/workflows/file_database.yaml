@@ -1,4 +1,4 @@
-name: swiftify_data_source
+name: file_database
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -7,8 +7,8 @@ concurrency:
 on:
   pull_request:
     paths:
-      - "packages/swiftify_data_source/**"
-      - ".github/workflows/swiftify_data_source.yaml"
+      - "packages/file_database/**"
+      - ".github/workflows/file_database.yaml"
     branches:
       - main
 
@@ -16,4 +16,4 @@ jobs:
   build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/dart_package.yml@v1
     with:
-      working_directory: packages/swiftify_data_source
+      working_directory: packages/file_database
