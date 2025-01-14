@@ -50,9 +50,9 @@ Future<Response> _get(RequestContext context) async {
     final albumsJson = updatedAlbum.map((album) => album.toJson()).toList();
 
     return Response.json(body: albumsJson);
-  } catch (e, st) {
+  } catch (e) {
     return Response.json(
-      body: 'error: $e stacktrace: $st',
+      body: 'error: $e',
       statusCode: HttpStatus.internalServerError,
     );
   }
