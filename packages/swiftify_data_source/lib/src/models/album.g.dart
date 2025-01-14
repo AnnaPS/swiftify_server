@@ -9,6 +9,7 @@ part of 'album.dart';
 Album _$AlbumFromJson(Map<String, dynamic> json) => Album(
       albumId: (json['album_id'] as num?)?.toInt() ?? 0,
       title: json['title'] as String? ?? '',
+      coverAlbum: json['cover_album'] as String? ?? '',
       artistId: (json['artist_id'] as num?)?.toInt() ?? 1,
       releaseDate: json['release_date'] as String? ?? '',
     );
