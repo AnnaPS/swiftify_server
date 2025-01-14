@@ -1,0 +1,16 @@
+name: api_client
+description: A package to manage Http calls.
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  swiftify_data_source:
+    path: ../swiftify_data_source
+
+dev_dependencies:
+  mocktail: ^1.0.4
+  test: ^1.25.12
+  very_good_analysis: ^6.0.0
