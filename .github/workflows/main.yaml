@@ -25,4 +25,4 @@ jobs:
   build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/dart_package.yml@v1
     with:
-     analyze_directories: "routes test"
+     analyze_directories: "routes/api/v1 test"
