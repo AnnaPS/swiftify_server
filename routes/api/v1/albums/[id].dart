@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:dart_frog/dart_frog.dart';
+import 'package:file_database/file_database.dart';
 import 'package:swiftify_data_source/swiftify_data_source.dart';
 
 FutureOr<Response> onRequest(RequestContext context, String albumId) async {
@@ -19,10 +20,43 @@ FutureOr<Response> onRequest(RequestContext context, String albumId) async {
 }
 
 Future<Response> _get(RequestContext context, {required String albumId}) async {
-  final dataSource = context.read<SwiftifyDataSource>();
-  final songs = await dataSource.getSongsByAlbum(albumId: albumId);
+  try {
+    final dataSource = context.read<SwiftifyDataSource>();
+    final fileDatabase = context.read<FileDatabase>();
 
-  final songsJson = songs.map((song) => song.toJson()).toList();
+    final extraSongData =
+        fileDatabase.readFile<List<dynamic>>(path: 'extra_song_data.json');
+    final songs = await dataSource.getSongsByAlbum(albumId: albumId);
 
-  return Response.json(body: songsJson);
+    final updatedSongData = List<Song>.from(songs);
+
+    if (extraSongData != null) {
+      for (final extraSong in extraSongData) {
+        final extraSongDataId =
+            ((extraSong as Map<String, dynamic>)['song_id']) as int;
+
+        final genres = (extraSong['genres'] as List<dynamic>)
+            .map((e) => e as String)
+            .toList();
+
+        for (final song in updatedSongData) {
+          if (song.songId == extraSongDataId) {
+            updatedSongData[updatedSongData.indexOf(song)] = song.copyWith(
+              duration: extraSong['duration'] as String,
+              genres: genres,
+            );
+          }
+        }
+      }
+    }
+
+    final songsJson = updatedSongData.map((song) => song.toJson()).toList();
+
+    return Response.json(body: songsJson);
+  } catch (e) {
+    return Response.json(
+      body: 'error: $e',
+      statusCode: HttpStatus.internalServerError,
+    );
+  }
 }

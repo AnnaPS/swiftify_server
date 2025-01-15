@@ -45,7 +45,11 @@ class SwiftifyDataRepository implements SwiftifyDataSource {
 
   @override
   Future<String> getLyricsBySong({required String songId}) async {
-    final data = await _apiClient.get<Map<String, dynamic>>('lyrics/$songId');
-    return data['lyrics'] as String;
+    try {
+      final data = await _apiClient.get<Map<String, dynamic>>('lyrics/$songId');
+      return data['lyrics'] as String;
+    } catch (e) {
+      return '';
+    }
   }
 }
