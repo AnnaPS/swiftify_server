@@ -25,7 +25,8 @@ Future<Response> _get(RequestContext context, {required String albumId}) async {
     final fileDatabase = context.read<FileDatabase>();
 
     final extraSongData = fileDatabase.readFile<List<dynamic>>(
-        path: 'assets/extra_song_data.json');
+      path: 'assets/extra_song_data.json',
+    );
     final songs = await dataSource.getSongsByAlbum(albumId: albumId);
 
     final updatedSongData = List<Song>.from(songs);
