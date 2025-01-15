@@ -27,7 +27,7 @@ Future<Response> _get(RequestContext context) async {
     final albums = await dataSource.getAlbums();
 
     final extraAlbumData = fileDatabase.readFile<List<dynamic>>(
-      path: 'extra_album_data.json',
+      path: 'assets/extra_album_data.json',
     );
 
     final updatedAlbum = List<Album>.from(albums);

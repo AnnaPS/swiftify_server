@@ -24,8 +24,8 @@ Future<Response> _get(RequestContext context, {required String albumId}) async {
     final dataSource = context.read<SwiftifyDataSource>();
     final fileDatabase = context.read<FileDatabase>();
 
-    final extraSongData =
-        fileDatabase.readFile<List<dynamic>>(path: 'extra_song_data.json');
+    final extraSongData = fileDatabase.readFile<List<dynamic>>(
+        path: 'assets/extra_song_data.json');
     final songs = await dataSource.getSongsByAlbum(albumId: albumId);
 
     final updatedSongData = List<Song>.from(songs);

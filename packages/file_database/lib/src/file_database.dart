@@ -9,14 +9,13 @@ class FileDatabase {
   const FileDatabase();
 
   /// Read the file and return the content as generic type.
-  /// If the file does not exist, it will return null.
+  /// If the file does not exist, it throws an exception.
+  /// If the file is not a valid, it throws an exception.
   T? readFile<T>({required String path}) {
     try {
-      return jsonDecode(File('assets/$path').readAsStringSync()) as T?;
-    } catch (e, _) {
-      throw Exception('Error reading file');
+      return jsonDecode(File(path).readAsStringSync()) as T?;
+    } catch (e, st) {
+      Error.throwWithStackTrace(Exception(e), st);
     }
   }
 }
-
-// TODO(ana): add exceptions
