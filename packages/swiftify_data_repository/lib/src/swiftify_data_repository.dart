@@ -2,7 +2,7 @@ import 'package:api_client/api_client.dart';
 import 'package:swiftify_data_source/swiftify_data_source.dart';
 
 /// {@template swiftify_data_repository}
-/// A package to request data to firestore.
+/// A package to request data to the data providers.
 /// {@endtemplate}
 class SwiftifyDataRepository implements SwiftifyDataSource {
   /// {@macro swiftify_data_repository}
