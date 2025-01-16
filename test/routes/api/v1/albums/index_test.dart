@@ -108,6 +108,17 @@ void main() {
           ),
         );
       });
+
+      test(
+          'return a HttpStatus.internalServerError when '
+          'response.json throws an error.', () async {
+        when(() => dataSource.getAlbums()).thenThrow(Exception());
+        when(() => request.method).thenReturn(HttpMethod.get);
+
+        final response = await route.onRequest(context);
+
+        expect(response.statusCode, equals(HttpStatus.internalServerError));
+      });
     });
 
     group('responds with a 405', () {
@@ -145,6 +156,14 @@ void main() {
 
       test('when method is PUT', () async {
         when(() => request.method).thenReturn(HttpMethod.put);
+
+        final response = await route.onRequest(context);
+
+        expect(response.statusCode, equals(HttpStatus.methodNotAllowed));
+      });
+
+      test('when method is POST', () async {
+        when(() => request.method).thenReturn(HttpMethod.post);
 
         final response = await route.onRequest(context);
 

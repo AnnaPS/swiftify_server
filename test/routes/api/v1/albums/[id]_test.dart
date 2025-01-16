@@ -114,6 +114,18 @@ void main() {
 
         verify(() => dataSource.getSongsByAlbum(albumId: '23')).called(1);
       });
+
+      test(
+          'return a HttpStatus.internalServerError when '
+          'response.json throws an error.', () async {
+        when(() => dataSource.getSongsByAlbum(albumId: any(named: 'albumId')))
+            .thenThrow(Exception());
+        when(() => request.method).thenReturn(HttpMethod.get);
+
+        final response = await route.onRequest(context, '23');
+
+        expect(response.statusCode, equals(HttpStatus.internalServerError));
+      });
     });
 
     group('responds with a 405', () {
@@ -151,6 +163,14 @@ void main() {
 
       test('when method is PUT', () async {
         when(() => request.method).thenReturn(HttpMethod.put);
+
+        final response = await route.onRequest(context, '1');
+
+        expect(response.statusCode, equals(HttpStatus.methodNotAllowed));
+      });
+
+      test('when method is POST', () async {
+        when(() => request.method).thenReturn(HttpMethod.post);
 
         final response = await route.onRequest(context, '1');
 
