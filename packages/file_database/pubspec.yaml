@@ -1,0 +1,12 @@
+name: file_database
+description: A generic class to manage Files
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+dev_dependencies:
+  mocktail: ^1.0.4
+  test: ^1.25.12
+  very_good_analysis: ^6.0.0

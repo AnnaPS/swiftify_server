@@ -1,0 +1,1963 @@
+[
+    {
+        "album_id": 1,
+        "song_id": 1,
+        "title": "Blank Space",
+        "duration": "3:51",
+        "genres": [
+            "Electropop"
+        ]
+    },
+    {
+        "album_id": 1,
+        "song_id": 2,
+        "title": "Style",
+        "duration": "3:49",
+        "genres": [
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 1,
+        "song_id": 3,
+        "title": "Out Of The Woods",
+        "duration": "3:55",
+        "genres": [
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 1,
+        "song_id": 4,
+        "title": "All You Had to Do Was Stay",
+        "duration": "3:13",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 1,
+        "song_id": 5,
+        "title": "Shake It Off",
+        "duration": "3:39",
+        "genres": [
+            "Dance-pop"
+        ]
+    },
+    {
+        "album_id": 1,
+        "song_id": 6,
+        "title": "I Wish You Would",
+        "duration": "3:27",
+        "genres": [
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 1,
+        "song_id": 7,
+        "title": "Bad Blood",
+        "duration": "3:31",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 1,
+        "song_id": 8,
+        "title": "I Know Places",
+        "duration": "3:15",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 1,
+        "song_id": 9,
+        "title": "Clean",
+        "duration": "4:31",
+        "genres": [
+            "Electropop"
+        ]
+    },
+    {
+        "album_id": 1,
+        "song_id": 10,
+        "title": "Wonderland",
+        "duration": "4:05",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 1,
+        "song_id": 11,
+        "title": "You Are in Love",
+        "duration": "4:27",
+        "genres": [
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 1,
+        "song_id": 12,
+        "title": "New Romantics",
+        "duration": "3:50",
+        "genres": [
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 2,
+        "song_id": 13,
+        "title": "Tim McGraw",
+        "duration": "3:52",
+        "genres": [
+            "Country rock"
+        ]
+    },
+    {
+        "album_id": 2,
+        "song_id": 14,
+        "title": "Picture to Burn",
+        "duration": "2:53",
+        "genres": [
+            "Country rock"
+        ]
+    },
+    {
+        "album_id": 2,
+        "song_id": 15,
+        "title": "Teardrops on My Guitar",
+        "duration": "3:33",
+        "genres": [
+            "Country rock"
+        ]
+    },
+    {
+        "album_id": 2,
+        "song_id": 16,
+        "title": "A Place in This World",
+        "duration": "3:19",
+        "genres": [
+            "Country pop"
+        ]
+    },
+    {
+        "album_id": 2,
+        "song_id": 17,
+        "title": "Cold as You",
+        "duration": "3:19",
+        "genres": [
+            "Country"
+        ]
+    },
+    {
+        "album_id": 2,
+        "song_id": 18,
+        "title": "The Outside",
+        "duration": "3:27",
+        "genres": [
+            "Country"
+        ]
+    },
+    {
+        "album_id": 2,
+        "song_id": 19,
+        "title": "Tied Together with a Smile",
+        "duration": "4:08",
+        "genres": [
+            "Country"
+        ]
+    },
+    {
+        "album_id": 2,
+        "song_id": 20,
+        "title": "Stay Beautiful",
+        "duration": "3:56",
+        "genres": [
+            "Country"
+        ]
+    },
+    {
+        "album_id": 2,
+        "song_id": 21,
+        "title": "Should\\'ve Said No",
+        "duration": "4:06",
+        "genres": [
+            "Country"
+        ]
+    },
+    {
+        "album_id": 2,
+        "song_id": 22,
+        "title": "Mary\\'s Song (Oh My My My)",
+        "duration": "3:36",
+        "genres": [
+            "Country"
+        ]
+    },
+    {
+        "album_id": 2,
+        "song_id": 23,
+        "title": "Our Song",
+        "duration": "3:15",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 2,
+        "song_id": 24,
+        "title": "I\\'m Only Me When I\\'m With You",
+        "duration": "3:35",
+        "genres": [
+            "Country pop"
+        ]
+    },
+    {
+        "album_id": 2,
+        "song_id": 25,
+        "title": "Invisible",
+        "duration": "3:23",
+        "genres": [
+            "Country"
+        ]
+    },
+    {
+        "album_id": 2,
+        "song_id": 26,
+        "title": "A Perfectly Good Heart",
+        "duration": "3:40",
+        "genres": [
+            "Country pop"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 35,
+        "title": "Fearless",
+        "duration": "4:01",
+        "genres": [
+            "Country pop",
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 27,
+        "title": "Breathe",
+        "duration": "4:23",
+        "genres": [
+            "Country pop",
+            "Acoustic"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 28,
+        "title": "Love Story",
+        "duration": "3:55",
+        "genres": [
+            "Country pop",
+            "Soft rock"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 29,
+        "title": "Tell Me Why",
+        "duration": "3:20",
+        "genres": [
+            "Country",
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 30,
+        "title": "The Best Day",
+        "duration": "4:05",
+        "genres": [
+            "Country",
+            "Folk pop"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 31,
+        "title": "Hey Stephen",
+        "duration": "4:14",
+        "genres": [
+            "Country",
+            "Acoustic pop"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 32,
+        "title": "You Belong with Me",
+        "duration": "3:52",
+        "genres": [
+            "Country pop",
+            "Power pop"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 33,
+        "title": "Fifteen",
+        "duration": "4:54",
+        "genres": [
+            "Country pop",
+            "Folk"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 34,
+        "title": "Change",
+        "duration": "4:40",
+        "genres": [
+            "Country pop",
+            "Anthemic rock"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 36,
+        "title": "Forever & Always",
+        "duration": "3:45",
+        "genres": [
+            "Country pop",
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 37,
+        "title": "The Way I Loved You",
+        "duration": "4:04",
+        "genres": [
+            "Country rock",
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 38,
+        "title": "White Horse",
+        "duration": "3:55",
+        "genres": [
+            "Country",
+            "Ballad"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 39,
+        "title": "You\\'re Not Sorry",
+        "duration": "4:21",
+        "genres": [
+            "Country pop",
+            "Power ballad"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 170,
+        "title": "We Were Happy",
+        "duration": "4:04",
+        "genres": [
+            "Country",
+            "Folk"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 171,
+        "title": "Mr. Perfectly Fine",
+        "duration": "4:37",
+        "genres": [
+            "Country pop",
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 172,
+        "title": "You All Over Me",
+        "duration": "3:58",
+        "genres": [
+            "Country",
+            "Folk"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 173,
+        "title": "Don\\'t You",
+        "duration": "3:28",
+        "genres": [
+            "Country pop",
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 174,
+        "title": "That\\'s When",
+        "duration": "3:23",
+        "genres": [
+            "Country pop",
+            "Soft rock"
+        ]
+    },
+    {
+        "album_id": 3,
+        "song_id": 175,
+        "title": "Bye Bye Baby",
+        "duration": "4:02",
+        "genres": [
+            "Country pop",
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 4,
+        "song_id": 40,
+        "title": "Better Than Revenge",
+        "duration": "3:40",
+        "genres": [
+            "Pop punk",
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 4,
+        "song_id": 41,
+        "title": "Long Live",
+        "duration": "5:17",
+        "genres": [
+            "Country pop",
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 4,
+        "song_id": 42,
+        "title": "Sparks Fly",
+        "duration": "4:21",
+        "genres": [
+            "Country pop",
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 4,
+        "song_id": 43,
+        "title": "Back To December",
+        "duration": "4:54",
+        "genres": [
+            "Country pop",
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 4,
+        "song_id": 44,
+        "title": "Enchanted",
+        "duration": "5:53",
+        "genres": [
+            "Country pop",
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 4,
+        "song_id": 45,
+        "title": "The Story Of Us",
+        "duration": "4:27",
+        "genres": [
+            "Country pop",
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 4,
+        "song_id": 46,
+        "title": "Mine",
+        "duration": "3:51",
+        "genres": [
+            "Country pop",
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 4,
+        "song_id": 47,
+        "title": "Haunted",
+        "duration": "4:05",
+        "genres": [
+            "Symphonic rock",
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 4,
+        "song_id": 48,
+        "title": "Dear John",
+        "duration": "6:45",
+        "genres": [
+            "Country pop",
+            "Blues rock"
+        ]
+    },
+    {
+        "album_id": 4,
+        "song_id": 49,
+        "title": "Mean",
+        "duration": "3:58",
+        "genres": [
+            "Country",
+            "Bluegrass"
+        ]
+    },
+    {
+        "album_id": 4,
+        "song_id": 50,
+        "title": "Innocent",
+        "duration": "5:01",
+        "genres": [
+            "Country pop",
+            "Soft rock"
+        ]
+    },
+    {
+        "album_id": 4,
+        "song_id": 51,
+        "title": "Last Kiss",
+        "duration": "6:09",
+        "genres": [
+            "Country",
+            "Ballad"
+        ]
+    },
+    {
+        "album_id": 4,
+        "song_id": 52,
+        "title": "Never Grow Up",
+        "duration": "4:52",
+        "genres": [
+            "Country",
+            "Acoustic"
+        ]
+    },
+    {
+        "album_id": 4,
+        "song_id": 53,
+        "title": "Speak Now",
+        "duration": "4:02",
+        "genres": [
+            "Country pop",
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 54,
+        "title": "The Last Time (Taylor’s version)",
+        "duration": "4:59",
+        "genres": [
+            "Alternative rock",
+            "Symphonic pop"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 55,
+        "title": "Nothing New (Taylor’s version)",
+        "duration": "4:18",
+        "genres": [
+            "Indie rock",
+            "Folk"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 56,
+        "title": "Everything Has Changed (Taylor’s version)",
+        "duration": "4:05",
+        "genres": [
+            "Country pop",
+            "Folk pop"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 57,
+        "title": "I Bet You Think About Me (Taylor’s version)",
+        "duration": "4:45",
+        "genres": [
+            "Country",
+            "Folk"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 58,
+        "title": "Run (Taylor’s version)",
+        "duration": "4:00",
+        "genres": [
+            "Folk pop",
+            "Acoustic"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 59,
+        "title": "The Very First Night (Taylor’s version)",
+        "duration": "3:20",
+        "genres": [
+            "Pop",
+            "Dance-pop"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 60,
+        "title": "22 (Taylor’s version)",
+        "duration": "3:50",
+        "genres": [
+            "Pop",
+            "Dance-pop"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 61,
+        "title": "State of Grace (Taylor’s version)",
+        "duration": "5:21",
+        "genres": [
+            "Acoustic",
+            "Country"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 62,
+        "title": "Sad Beautiful Tragic (Taylor’s version)",
+        "duration": "4:44",
+        "genres": [
+            "Country",
+            "Folk"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 63,
+        "title": "Better Man (Taylor’s version)",
+        "duration": "4:57",
+        "genres": [
+            "Country",
+            "Folk"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 64,
+        "title": "I Almost Do (Taylor’s version)",
+        "duration": "4:04",
+        "genres": [
+            "Country",
+            "Soft rock"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 65,
+        "title": "Forever Winter (Taylor’s version)",
+        "duration": "4:23",
+        "genres": [
+            "Pop rock",
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 66,
+        "title": "Ronan (Taylor’s version)",
+        "duration": "4:24",
+        "genres": [
+            "Folk",
+            "Acoustic"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 67,
+        "title": "Begin Again (Taylor’s version)",
+        "duration": "3:58",
+        "genres": [
+            "Country",
+            "Folk"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 68,
+        "title": "Girl at Home (Taylor’s version)",
+        "duration": "3:40",
+        "genres": [
+            "Pop",
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 69,
+        "title": "Red (Taylor’s version)",
+        "duration": "3:43",
+        "genres": [
+            "Country pop",
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 70,
+        "title": "All Too Well (Taylor’s version)",
+        "duration": "5:29",
+        "genres": [
+            "Country",
+            "Soft rock"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 71,
+        "title": "Holy Ground (Taylor’s version)",
+        "duration": "3:22",
+        "genres": [
+            "Pop rock",
+            "Country rock"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 72,
+        "title": "Babe (Taylor’s version)",
+        "duration": "3:44",
+        "genres": [
+            "Country pop",
+            "Pop rock"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 73,
+        "title": "Treacherous (Taylor’s version)",
+        "duration": "4:02",
+        "genres": [
+            "Country",
+            "Soft rock"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 74,
+        "title": "The Lucky One (Taylor’s version)",
+        "duration": "4:00",
+        "genres": [
+            "Pop",
+            "Soft rock"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 75,
+        "title": "We Are Never Ever Getting Back Together (Taylor’s version)",
+        "duration": "3:13",
+        "genres": [
+            "Pop",
+            "Bubblegum pop"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 76,
+        "title": "Come Back… Be Here (Taylor’s version)",
+        "duration": "3:43",
+        "genres": [
+            "Pop",
+            "Country"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 77,
+        "title": "I Knew You Were Trouble (Taylor’s version)",
+        "duration": "3:39",
+        "genres": [
+            "Pop",
+            "Dubstep"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 78,
+        "title": "The Moment I Knew (Taylor’s version)",
+        "duration": "4:45",
+        "genres": [
+            "Country",
+            "Soft rock"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 79,
+        "title": "Starlight (Taylor’s version)",
+        "duration": "3:40",
+        "genres": [
+            "Pop rock",
+            "Country pop"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 80,
+        "title": "Stay Stay Stay (Taylor’s version)",
+        "duration": "3:25",
+        "genres": [
+            "Country pop",
+            "Bubblegum pop"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 81,
+        "title": "Message in a Bottle (Taylor’s version)",
+        "duration": "3:45",
+        "genres": [
+            "Pop",
+            "Dance-pop"
+        ]
+    },
+    {
+        "album_id": 5,
+        "song_id": 82,
+        "title": "All Too Well (10 minute version) (Taylor’s version)",
+        "duration": "10:13",
+        "genres": [
+            "Folk rock",
+            "Country"
+        ]
+    },
+    {
+        "album_id": 6,
+        "song_id": 83,
+        "title": "End Game",
+        "duration": "4:04",
+        "genres": [
+            "Pop",
+            "Hip hop"
+        ]
+    },
+    {
+        "album_id": 6,
+        "song_id": 84,
+        "title": "Call It What You Want",
+        "duration": "3:23",
+        "genres": [
+            "Electropop",
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 6,
+        "song_id": 85,
+        "title": "I Did Something Bad",
+        "duration": "3:58",
+        "genres": [
+            "Electropop",
+            "Trap"
+        ]
+    },
+    {
+        "album_id": 6,
+        "song_id": 86,
+        "title": "Don\\'t Blame Me",
+        "duration": "3:56",
+        "genres": [
+            "Electropop",
+            "Gospel"
+        ]
+    },
+    {
+        "album_id": 6,
+        "song_id": 87,
+        "title": "...Ready for It?",
+        "duration": "3:28",
+        "genres": [
+            "Electropop",
+            "Industrial pop"
+        ]
+    },
+    {
+        "album_id": 6,
+        "song_id": 88,
+        "title": "This Is Why We Can\\'t Have Nice Things",
+        "duration": "3:27",
+        "genres": [
+            "Pop",
+            "Hip hop"
+        ]
+    },
+    {
+        "album_id": 6,
+        "song_id": 89,
+        "title": "Dress",
+        "duration": "3:50",
+        "genres": [
+            "Electropop",
+            "R&B"
+        ]
+    },
+    {
+        "album_id": 6,
+        "song_id": 90,
+        "title": "King of My Heart",
+        "duration": "3:34",
+        "genres": [
+            "Electropop",
+            "Trap"
+        ]
+    },
+    {
+        "album_id": 6,
+        "song_id": 91,
+        "title": "Look What You Made Me Do",
+        "duration": "3:31",
+        "genres": [
+            "Electropop",
+            "Dance-pop"
+        ]
+    },
+    {
+        "album_id": 6,
+        "song_id": 92,
+        "title": "Dancing With Our Hands Tied",
+        "duration": "3:31",
+        "genres": [
+            "Electropop",
+            "Dance-pop"
+        ]
+    },
+    {
+        "album_id": 6,
+        "song_id": 93,
+        "title": "Gorgeous",
+        "duration": "3:30",
+        "genres": [
+            "Electropop",
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 6,
+        "song_id": 94,
+        "title": "New Year\\'s Day",
+        "duration": "3:55",
+        "genres": [
+            "Pop",
+            "Country"
+        ]
+    },
+    {
+        "album_id": 6,
+        "song_id": 95,
+        "title": "Getaway Car",
+        "duration": "3:53",
+        "genres": [
+            "Synth-pop",
+            "New wave"
+        ]
+    },
+    {
+        "album_id": 6,
+        "song_id": 96,
+        "title": "Delicate",
+        "duration": "3:52",
+        "genres": [
+            "Electropop",
+            "Dance-pop"
+        ]
+    },
+    {
+        "album_id": 6,
+        "song_id": 97,
+        "title": "So It Goes…",
+        "duration": "3:47",
+        "genres": [
+            "Electropop",
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 7,
+        "song_id": 98,
+        "title": "ME!",
+        "duration": "3:13",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 7,
+        "song_id": 99,
+        "title": "Soon You\\'ll Get Better",
+        "duration": "3:20",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 7,
+        "song_id": 100,
+        "title": "London Boy",
+        "duration": "3:11",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 7,
+        "song_id": 101,
+        "title": "Cornelia Street",
+        "duration": "4:47",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 7,
+        "song_id": 102,
+        "title": "Miss Americana & The Heartbreak Prince",
+        "duration": "3:55",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 7,
+        "song_id": 103,
+        "title": "Death By A Thousand Cuts",
+        "duration": "4:19",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 7,
+        "song_id": 104,
+        "title": "I Forgot That You Existed",
+        "duration": "3:10",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 7,
+        "song_id": 105,
+        "title": "Lover",
+        "duration": "3:41",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 7,
+        "song_id": 106,
+        "title": "Cruel Summer",
+        "duration": "2:58",
+        "genres": [
+            "Synth-pop",
+            "Electropop"
+        ]
+    },
+    {
+        "album_id": 7,
+        "song_id": 107,
+        "title": "I Think He Knows",
+        "duration": "2:48",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 7,
+        "song_id": 108,
+        "title": "False God",
+        "duration": "3:19",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 7,
+        "song_id": 109,
+        "title": "The Archer",
+        "duration": "3:31",
+        "genres": [
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 7,
+        "song_id": 110,
+        "title": "You Need to Calm Down",
+        "duration": "2:51",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 7,
+        "song_id": 111,
+        "title": "Paper Rings",
+        "duration": "3:25",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 7,
+        "song_id": 112,
+        "title": "The Man",
+        "duration": "3:41",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 7,
+        "song_id": 113,
+        "title": "Afterglow",
+        "duration": "3:33",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 7,
+        "song_id": 114,
+        "title": "It\\'s Nice To Have A Friend",
+        "duration": "2:48",
+        "genres": [
+            "Pop",
+            "Indie pop"
+        ]
+    },
+    {
+        "album_id": 7,
+        "song_id": 115,
+        "title": "Daylight",
+        "duration": "4:53",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 8,
+        "song_id": 116,
+        "title": "exile",
+        "duration": "4:45",
+        "genres": [
+            "Indie folk"
+        ]
+    },
+    {
+        "album_id": 8,
+        "song_id": 117,
+        "title": "mirrorball",
+        "duration": "4:28",
+        "genres": [
+            "Dream pop"
+        ]
+    },
+    {
+        "album_id": 8,
+        "song_id": 118,
+        "title": "seven",
+        "duration": "3:29",
+        "genres": [
+            "Indie folk"
+        ]
+    },
+    {
+        "album_id": 8,
+        "song_id": 119,
+        "title": "august",
+        "duration": "4:21",
+        "genres": [
+            "Dream pop"
+        ]
+    },
+    {
+        "album_id": 8,
+        "song_id": 120,
+        "title": "mad woman",
+        "duration": "4:00",
+        "genres": [
+            "Alternative rock"
+        ]
+    },
+    {
+        "album_id": 8,
+        "song_id": 121,
+        "title": "the last great american dynasty",
+        "duration": "3:50",
+        "genres": [
+            "Alternative indie pop"
+        ]
+    },
+    {
+        "album_id": 8,
+        "song_id": 122,
+        "title": "cardigan",
+        "duration": "4:59",
+        "genres": [
+            "Folk pop"
+        ]
+    },
+    {
+        "album_id": 8,
+        "song_id": 123,
+        "title": "hoax",
+        "duration": "3:40",
+        "genres": [
+            "Indie folk"
+        ]
+    },
+    {
+        "album_id": 8,
+        "song_id": 124,
+        "title": "betty",
+        "duration": "4:54",
+        "genres": [
+            "Country"
+        ]
+    },
+    {
+        "album_id": 8,
+        "song_id": 125,
+        "title": "My Tears Ricochet",
+        "duration": "4:15",
+        "genres": [
+            "Arena goth"
+        ]
+    },
+    {
+        "album_id": 8,
+        "song_id": 126,
+        "title": "peace",
+        "duration": "4:37",
+        "genres": [
+            "Indie folk"
+        ]
+    },
+    {
+        "album_id": 8,
+        "song_id": 127,
+        "title": "the 1",
+        "duration": "3:30",
+        "genres": [
+            "Soft rock"
+        ]
+    },
+    {
+        "album_id": 8,
+        "song_id": 128,
+        "title": "invisible string",
+        "duration": "4:13",
+        "genres": [
+            "Indie folk"
+        ]
+    },
+    {
+        "album_id": 8,
+        "song_id": 129,
+        "title": "this is me trying",
+        "duration": "4:29",
+        "genres": [
+            "Indie folk"
+        ]
+    },
+    {
+        "album_id": 8,
+        "song_id": 130,
+        "title": "epiphany",
+        "duration": "4:49",
+        "genres": [
+            "Indie folk"
+        ]
+    },
+    {
+        "album_id": 8,
+        "song_id": 131,
+        "title": "illicit affairs",
+        "duration": "3:10",
+        "genres": [
+            "Indie folk"
+        ]
+    },
+    {
+        "album_id": 8,
+        "song_id": 169,
+        "title": "the lakes",
+        "duration": "3:30",
+        "genres": [
+            "Indie folk"
+        ]
+    },
+    {
+        "album_id": 9,
+        "song_id": 132,
+        "title": "coney island",
+        "duration": "4:35",
+        "genres": [
+            "Indie pop"
+        ]
+    },
+    {
+        "album_id": 9,
+        "song_id": 133,
+        "title": "no body, no crime",
+        "duration": "3:35",
+        "genres": [
+            "Country",
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 9,
+        "song_id": 134,
+        "title": "evermore",
+        "duration": "5:04",
+        "genres": [
+            "Indie folk"
+        ]
+    },
+    {
+        "album_id": 9,
+        "song_id": 135,
+        "title": "long story short",
+        "duration": "3:35",
+        "genres": [
+            "Indie pop"
+        ]
+    },
+    {
+        "album_id": 9,
+        "song_id": 136,
+        "title": "cowboy like me",
+        "duration": "4:35",
+        "genres": [
+            "Indie folk"
+        ]
+    },
+    {
+        "album_id": 9,
+        "song_id": 137,
+        "title": "willow",
+        "duration": "3:34",
+        "genres": [
+            "Folk pop"
+        ]
+    },
+    {
+        "album_id": 9,
+        "song_id": 138,
+        "title": "dorothea",
+        "duration": "3:45",
+        "genres": [
+            "Folk pop"
+        ]
+    },
+    {
+        "album_id": 9,
+        "song_id": 139,
+        "title": "gold rush",
+        "duration": "3:05",
+        "genres": [
+            "Indie pop"
+        ]
+    },
+    {
+        "album_id": 9,
+        "song_id": 140,
+        "title": "closure",
+        "duration": "3:00",
+        "genres": [
+            "Indie pop"
+        ]
+    },
+    {
+        "album_id": 9,
+        "song_id": 141,
+        "title": "tolerate it",
+        "duration": "4:05",
+        "genres": [
+            "Indie folk"
+        ]
+    },
+    {
+        "album_id": 9,
+        "song_id": 142,
+        "title": "champagne problems",
+        "duration": "4:04",
+        "genres": [
+            "Indie pop"
+        ]
+    },
+    {
+        "album_id": 9,
+        "song_id": 143,
+        "title": "marjorie",
+        "duration": "4:17",
+        "genres": [
+            "Indie folk"
+        ]
+    },
+    {
+        "album_id": 9,
+        "song_id": 144,
+        "title": "‘tis the damn season",
+        "duration": "3:49",
+        "genres": [
+            "Folk pop"
+        ]
+    },
+    {
+        "album_id": 9,
+        "song_id": 145,
+        "title": "happiness",
+        "duration": "5:15",
+        "genres": [
+            "Indie folk"
+        ]
+    },
+    {
+        "album_id": 9,
+        "song_id": 146,
+        "title": "ivy",
+        "duration": "4:20",
+        "genres": [
+            "Indie folk"
+        ]
+    },
+    {
+        "album_id": 9,
+        "song_id": 167,
+        "title": "right where you left me",
+        "duration": "4:30",
+        "genres": [
+            "Indie folk"
+        ]
+    },
+    {
+        "album_id": 9,
+        "song_id": 168,
+        "title": "it\\'s time to go",
+        "duration": "4:30",
+        "genres": [
+            "Indie folk"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 147,
+        "title": "Snow on the Beach",
+        "duration": "4:17",
+        "genres": [
+            "Dream pop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 148,
+        "title": "Maroon",
+        "duration": "3:35",
+        "genres": [
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 149,
+        "title": "Bejeweled",
+        "duration": "3:15",
+        "genres": [
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 150,
+        "title": "Labyrinth",
+        "duration": "4:10",
+        "genres": [
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 151,
+        "title": "Mastermind",
+        "duration": "3:11",
+        "genres": [
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 152,
+        "title": "Lavender Haze",
+        "duration": "3:22",
+        "genres": [
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 153,
+        "title": "Sweet Nothing",
+        "duration": "3:08",
+        "genres": [
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 154,
+        "title": "Vigilante Shit",
+        "duration": "3:45",
+        "genres": [
+            "Electropop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 155,
+        "title": "Midnight Rain",
+        "duration": "3:34",
+        "genres": [
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 156,
+        "title": "Karma",
+        "duration": "3:31",
+        "genres": [
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 157,
+        "title": "Anti-Hero",
+        "duration": "3:20",
+        "genres": [
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 158,
+        "title": "Question…?",
+        "duration": "3:30",
+        "genres": [
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 159,
+        "title": "You\\'re on Your Own, Kid",
+        "duration": "3:14",
+        "genres": [
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 160,
+        "title": "The Great War",
+        "duration": "4:18",
+        "genres": [
+            "Synth-pop",
+            "Indie pop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 161,
+        "title": "High Infidelity",
+        "duration": "3:48",
+        "genres": [
+            "Indie pop",
+            "Alternative rock"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 162,
+        "title": "Would've, Could've, Should've",
+        "duration": "4:00",
+        "genres": [
+            "Indie pop",
+            "Alternative rock"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 163,
+        "title": "Bigger Than the Whole Sky",
+        "duration": "4:16",
+        "genres": [
+            "Indie pop",
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 164,
+        "title": "Paris",
+        "duration": "3:25",
+        "genres": [
+            "Synth-pop",
+            "Electropop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 165,
+        "title": "Glitch",
+        "duration": "3:43",
+        "genres": [
+            "Synth-pop",
+            "Electropop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 166,
+        "title": "Dear Reader",
+        "duration": "4:05",
+        "genres": [
+            "Synth-pop",
+            "Indie pop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 176,
+        "title": "Hits Different",
+        "duration": "3:30",
+        "genres": [
+            "Pop",
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 10,
+        "song_id": 177,
+        "title": "You're Losing Me",
+        "duration": "4:10",
+        "genres": [
+            "Pop",
+            "Synth-pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 178,
+        "title": "Fortnight",
+        "duration": "3:48",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 179,
+        "title": "The Tortured Poets Department",
+        "duration": "4:53",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 180,
+        "title": "My Boy Only Breaks His Favorite Toys",
+        "duration": "3:23",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 181,
+        "title": "Down Bad",
+        "duration": "4:21",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 182,
+        "title": "So Long, London",
+        "duration": "4:22",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 183,
+        "title": "But Daddy I Love Him",
+        "duration": "5:54",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 184,
+        "title": "Fresh Out the Slammer",
+        "duration": "3:30",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 185,
+        "title": "Florida!!!",
+        "duration": "3:35",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 186,
+        "title": "Guilty as Sin?",
+        "duration": "4:14",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 187,
+        "title": "Who's Afraid of Little Old Me?",
+        "duration": "5:34",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 188,
+        "title": "I Can Fix Him (No Really I Can)",
+        "duration": "2:36",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 189,
+        "title": "loml",
+        "duration": "4:37",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 190,
+        "title": "I Can Do It with a Broken Heart",
+        "duration": "3:38",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 191,
+        "title": "The Smallest Man Who Ever Lived",
+        "duration": "4:05",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 192,
+        "title": "The Alchemy",
+        "duration": "3:16",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 193,
+        "title": "Clara Bow",
+        "duration": "3:36",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 194,
+        "title": "The Black Dog",
+        "duration": "3:58",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 195,
+        "title": "imgonnagetyouback",
+        "duration": "3:42",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 196,
+        "title": "The Albatross",
+        "duration": "3:03",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 197,
+        "title": "Chloe or Sam or Sophia or Marcus",
+        "duration": "3:33",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 198,
+        "title": "How Did It End?",
+        "duration": "3:58",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 199,
+        "title": "So High School",
+        "duration": "3:48",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 200,
+        "title": "I Hate It Here",
+        "duration": "4:03",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 201,
+        "title": "Thank You Aimee",
+        "duration": "4:23",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 202,
+        "title": "I Look in People's Windows",
+        "duration": "2:11",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 203,
+        "title": "The Prophecy",
+        "duration": "4:09",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 204,
+        "title": "Cassandra",
+        "duration": "4:00",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 205,
+        "title": "Peter",
+        "duration": "4:43",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 206,
+        "title": "The Bolter",
+        "duration": "3:58",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 207,
+        "title": "Robin",
+        "duration": "4:00",
+        "genres": [
+            "Pop"
+        ]
+    },
+    {
+        "album_id": 11,
+        "song_id": 208,
+        "title": "The Manuscript",
+        "duration": "3:44",
+        "genres": [
+            "Pop"
+        ]
+    }
+]

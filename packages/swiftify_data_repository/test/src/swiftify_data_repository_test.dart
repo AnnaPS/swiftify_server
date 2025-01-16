@@ -77,6 +77,16 @@ void main() {
         verify(() => apiClient.get<Map<String, dynamic>>('lyrics/1')).called(1);
         expect(response.values.first, equals('Lyrics'));
       });
+
+      test('returns an empty string if an error occurs', () async {
+        when(() => apiClient.get<Map<String, dynamic>>(any()))
+            .thenThrow(Exception());
+
+        await repository.getLyricsBySong(songId: '1');
+
+        verify(() => apiClient.get<Map<String, dynamic>>('lyrics/1')).called(1);
+        expect(repository.getLyricsBySong(songId: '1'), completion(equals('')));
+      });
     });
   });
 }

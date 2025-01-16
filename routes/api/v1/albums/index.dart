@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:dart_frog/dart_frog.dart';
+import 'package:file_database/file_database.dart';
 import 'package:swiftify_data_source/swiftify_data_source.dart';
 
 FutureOr<Response> onRequest(RequestContext context) async {
@@ -19,10 +20,40 @@ FutureOr<Response> onRequest(RequestContext context) async {
 }
 
 Future<Response> _get(RequestContext context) async {
-  final dataSource = context.read<SwiftifyDataSource>();
+  try {
+    final dataSource = context.read<SwiftifyDataSource>();
+    final fileDatabase = context.read<FileDatabase>();
 
-  final albums = await dataSource.getAlbums();
-  final albumsJson = albums.map((album) => album.toJson()).toList();
+    final albums = await dataSource.getAlbums();
 
-  return Response.json(body: albumsJson);
+    final extraAlbumData = fileDatabase.readFile<List<dynamic>>(
+      path: 'assets/extra_album_data.json',
+    );
+
+    final updatedAlbum = List<Album>.from(albums);
+
+    if (extraAlbumData != null) {
+      for (final extraAlbum in extraAlbumData) {
+        final extraAlbumDataId =
+            ((extraAlbum as Map<String, dynamic>)['album_id']) as int;
+
+        for (final album in updatedAlbum) {
+          if (album.albumId == extraAlbumDataId) {
+            updatedAlbum[updatedAlbum.indexOf(album)] = album.copyWith(
+              coverAlbum: extraAlbum['cover_album'] as String,
+            );
+          }
+        }
+      }
+    }
+
+    final albumsJson = updatedAlbum.map((album) => album.toJson()).toList();
+
+    return Response.json(body: albumsJson);
+  } catch (e) {
+    return Response.json(
+      body: 'error: $e',
+      statusCode: HttpStatus.internalServerError,
+    );
+  }
 }

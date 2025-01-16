@@ -13,7 +13,7 @@ class Album extends Equatable {
   const Album({
     this.albumId = 0,
     this.title = '',
-    this.albumCover = '',
+    this.coverAlbum = '',
     this.artistId = 1,
     this.releaseDate = '',
   });
@@ -25,15 +25,13 @@ class Album extends Equatable {
   Map<String, dynamic> toJson() => _$AlbumToJson(this);
 
   /// The album id
-
   final int albumId;
 
   /// The album title
   final String title;
 
   /// The album cover image in URL format
-  @JsonKey(includeFromJson: false, includeToJson: true)
-  final String albumCover;
+  final String? coverAlbum;
 
   /// The artist id of the album
   final int artistId;
@@ -43,8 +41,25 @@ class Album extends Equatable {
   @override
   List<Object?> get props => [
         title,
-        albumCover,
+        coverAlbum,
         artistId,
         releaseDate,
+        albumId,
       ];
+
+  Album copyWith({
+    int? albumId,
+    String? title,
+    String? coverAlbum,
+    int? artistId,
+    String? releaseDate,
+  }) {
+    return Album(
+      albumId: albumId ?? this.albumId,
+      title: title ?? this.title,
+      coverAlbum: coverAlbum ?? this.coverAlbum,
+      artistId: artistId ?? this.artistId,
+      releaseDate: releaseDate ?? this.releaseDate,
+    );
+  }
 }

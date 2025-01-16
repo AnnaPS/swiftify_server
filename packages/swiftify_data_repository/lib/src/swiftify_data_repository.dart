@@ -2,7 +2,7 @@ import 'package:api_client/api_client.dart';
 import 'package:swiftify_data_source/swiftify_data_source.dart';
 
 /// {@template swiftify_data_repository}
-/// A package to request data to firestore.
+/// A package to request data to the data providers.
 /// {@endtemplate}
 class SwiftifyDataRepository implements SwiftifyDataSource {
   /// {@macro swiftify_data_repository}
@@ -18,6 +18,7 @@ class SwiftifyDataRepository implements SwiftifyDataSource {
   @override
   Future<List<Album>> getAlbums() async {
     final responseBody = await _apiClient.get<List<dynamic>>('albums');
+
     return responseBody
         .map((albumJson) => Album.fromJson(albumJson as Map<String, dynamic>))
         .toList()
@@ -44,7 +45,11 @@ class SwiftifyDataRepository implements SwiftifyDataSource {
 
   @override
   Future<String> getLyricsBySong({required String songId}) async {
-    final data = await _apiClient.get<Map<String, dynamic>>('lyrics/$songId');
-    return data['lyrics'] as String;
+    try {
+      final data = await _apiClient.get<Map<String, dynamic>>('lyrics/$songId');
+      return data['lyrics'] as String;
+    } catch (e) {
+      return '';
+    }
   }
 }

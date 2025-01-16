@@ -1,0 +1,46 @@
+[
+    {
+        "album_id": 1,
+        "cover_album": "https://upload.wikimedia.org/wikipedia/en/d/d5/Taylor_Swift_-_1989_%28Taylor%27s_Version%29.png"
+    },
+    {
+        "album_id": 2,
+        "cover_album": "https://upload.wikimedia.org/wikipedia/en/1/1f/Taylor_Swift_-_Taylor_Swift.png"
+    },
+    {
+        "album_id": 3,
+        "cover_album": "https://upload.wikimedia.org/wikipedia/en/5/5b/Fearless_%28Taylor%27s_Version%29_%282021_album_cover%29_by_Taylor_Swift.png"
+    },
+    {
+        "album_id": 4,
+        "cover_album": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5b/Taylor_Swift_-_Speak_Now_%28Taylor%27s_Version%29.png/220px-Taylor_Swift_-_Speak_Now_%28Taylor%27s_Version%29.png"
+    },
+    {
+        "album_id": 5,
+        "cover_album": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/Taylor_Swift_-_Red.png/220px-Taylor_Swift_-_Red.png"
+    },
+    {
+        "album_id": 6,
+        "cover_album": "https://upload.wikimedia.org/wikipedia/en/f/f2/Taylor_Swift_-_Reputation.png"
+    },
+    {
+        "album_id": 7,
+        "cover_album": "https://upload.wikimedia.org/wikipedia/en/c/cd/Taylor_Swift_-_Lover.png"
+    },
+    {
+        "album_id": 8,
+        "cover_album": "https://upload.wikimedia.org/wikipedia/en/f/f8/Taylor_Swift_-_Folklore.png"
+    },
+    {
+        "album_id": 9,
+        "cover_album": "https://upload.wikimedia.org/wikipedia/en/0/0a/Taylor_Swift_-_Evermore.png"
+    },
+    {
+        "album_id": 10,
+        "cover_album": "https://upload.wikimedia.org/wikipedia/en/9/9f/Midnights_-_Taylor_Swift.png"
+    },
+    {
+        "album_id": 11,
+        "cover_album": "https://upload.wikimedia.org/wikipedia/en/6/6e/Taylor_Swift_%E2%80%93_The_Tortured_Poets_Department_%28album_cover%29.png"
+    }
+]

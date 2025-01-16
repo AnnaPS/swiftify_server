@@ -8,13 +8,17 @@ void main() {
       songId: 1,
       title: 'title',
       lyrics: 'lyrics',
+      duration: 'duration',
+      genres: ['pop'],
     );
 
     const song2 = Song(
       albumId: 2,
       songId: 2,
-      title: 'title',
-      lyrics: 'lyrics',
+      title: 'title2',
+      lyrics: 'lyrics2',
+      duration: 'duration2',
+      genres: ['genres2'],
     );
 
     test('supports value comparisons', () {
@@ -40,6 +44,8 @@ void main() {
         'lyrics': 'lyrics',
         'album_id': 1,
         'song_id': 1,
+        'duration': 'duration',
+        'genres': ['pop'],
       };
 
       expect(song.toJson(), json);
@@ -52,6 +58,8 @@ void main() {
           songId: 2,
           title: 'title',
           lyrics: 'lyrics',
+          duration: 'duration',
+          genres: ['genres'],
         );
 
         expect(copiedSong.albumId, equals(2));
