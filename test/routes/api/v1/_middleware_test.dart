@@ -40,13 +40,7 @@ void main() {
               .captured
               .single as SwiftifyDataSource Function();
 
-      final fileDatabase =
-          verify(() => context.provide<FileDatabase>(captureAny()))
-              .captured
-              .single as FileDatabase Function();
-
       expect(swiftify(), isA<SwiftifyDataSource>());
-      expect(fileDatabase(), isA<FileDatabase>());
     });
   });
 }

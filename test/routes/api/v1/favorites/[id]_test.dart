@@ -5,7 +5,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:swiftify_data_source/swiftify_data_source.dart';
 import 'package:test/test.dart';
 
-import '../../../../../routes/api/v1/albums/[id].dart' as route;
+import '../../../../../routes/api/v1/favorites/[id].dart' as route;
 
 class _MockRequestContext extends Mock implements RequestContext {}
 
@@ -16,19 +16,18 @@ class _MockSwiftifyDataSource extends Mock implements SwiftifyDataSource {}
 class _MockUri extends Mock implements Uri {}
 
 void main() {
-  group('albums by id', () {
+  group('favorites by id', () {
     late RequestContext context;
     late Request request;
     late Uri uri;
     late SwiftifyDataSource dataSource;
 
-    const songs = [
-      Song(
-        songId: 1,
-        title: 'Song 1',
-        albumId: 23,
-        duration: '3:30',
-        genres: ['pop', 'rock'],
+    const favorites = [
+      Album(
+        albumId: 1,
+        title: 'Album 1',
+        releaseDate: '2021-01-01',
+        coverAlbum: 'https://example.com',
       ),
     ];
 
@@ -45,52 +44,40 @@ void main() {
     });
 
     setUpAll(() {
-      registerFallbackValue(songs);
+      registerFallbackValue(favorites);
     });
 
-    group('GET /albums/[id]', () {
-      test('return a list of songs and respons with a 200', () async {
-        when(() => dataSource.getSongsByAlbum(albumId: any(named: 'albumId')))
-            .thenAnswer((_) async => songs);
-        when(() => request.method).thenReturn(HttpMethod.get);
-
-        final response = await route.onRequest(context, '23');
-
-        expect(response.statusCode, equals(HttpStatus.ok));
-        verify(() => dataSource.getSongsByAlbum(albumId: '23')).called(1);
-
-        expect(
-          response.json(),
-          completion(
-            equals(
-              songs.map((song) => song.toJson()).toList(),
-            ),
+    group('DELETE /favorites/[id] ', () {
+      test('delete a favorite album and respond with a 204', () async {
+        when(
+          () => dataSource.deleteFavoriteAlbum(
+            albumId: any(named: 'albumId'),
           ),
-        );
-      });
-
-      test(
-          'return a HttpStatus.internalServerError when '
-          'response.json throws an error.', () async {
-        when(() => dataSource.getSongsByAlbum(albumId: any(named: 'albumId')))
-            .thenThrow(Exception());
-        when(() => request.method).thenReturn(HttpMethod.get);
-
-        final response = await route.onRequest(context, '23');
-
-        expect(response.statusCode, equals(HttpStatus.internalServerError));
-      });
-    });
-
-    group('responds with a 405', () {
-      test('when method is DELETE', () async {
+        ).thenAnswer((_) async {});
         when(() => request.method).thenReturn(HttpMethod.delete);
 
         final response = await route.onRequest(context, '1');
 
-        expect(response.statusCode, equals(HttpStatus.methodNotAllowed));
+        expect(response.statusCode, equals(HttpStatus.noContent));
+        verify(() => dataSource.deleteFavoriteAlbum(albumId: '1')).called(1);
       });
 
+      test('respond with a 500 when an exception is thrown', () async {
+        when(
+          () => dataSource.deleteFavoriteAlbum(
+            albumId: any(named: 'albumId'),
+          ),
+        ).thenThrow(Exception());
+        when(() => request.method).thenReturn(HttpMethod.delete);
+
+        final response = await route.onRequest(context, '1');
+
+        expect(response.statusCode, equals(HttpStatus.internalServerError));
+        verify(() => dataSource.deleteFavoriteAlbum(albumId: '1')).called(1);
+      });
+    });
+
+    group('responds with a 405', () {
       test('when method is HEAD', () async {
         when(() => request.method).thenReturn(HttpMethod.head);
 
@@ -117,6 +104,13 @@ void main() {
 
       test('when method is PUT', () async {
         when(() => request.method).thenReturn(HttpMethod.put);
+
+        final response = await route.onRequest(context, '1');
+
+        expect(response.statusCode, equals(HttpStatus.methodNotAllowed));
+      });
+      test('when method is GET', () async {
+        when(() => request.method).thenReturn(HttpMethod.get);
 
         final response = await route.onRequest(context, '1');
 

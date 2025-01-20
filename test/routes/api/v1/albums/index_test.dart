@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:dart_frog/dart_frog.dart';
-import 'package:file_database/file_database.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:swiftify_data_source/swiftify_data_source.dart';
 import 'package:test/test.dart';
@@ -14,27 +13,16 @@ class _MockRequest extends Mock implements Request {}
 
 class _MockSwiftifyDataSource extends Mock implements SwiftifyDataSource {}
 
-class _MockFileDatabase extends Mock implements FileDatabase {}
-
 class _MockUri extends Mock implements Uri {}
 
 void main() {
-  group('GET /albums', () {
+  group('albums', () {
     late RequestContext context;
     late Request request;
     late Uri uri;
     late SwiftifyDataSource dataSource;
-    late FileDatabase fileDatabase;
 
     const albums = [
-      Album(
-        albumId: 1,
-        title: 'Album 1',
-        releaseDate: '2021-01-01',
-      ),
-    ];
-
-    const albumsExtraData = [
       Album(
         albumId: 1,
         title: 'Album 1',
@@ -48,9 +36,7 @@ void main() {
       request = _MockRequest();
       uri = _MockUri();
       dataSource = _MockSwiftifyDataSource();
-      fileDatabase = _MockFileDatabase();
 
-      when(() => context.read<FileDatabase>()).thenReturn(fileDatabase);
       when(() => context.read<SwiftifyDataSource>()).thenReturn(dataSource);
       when(() => context.request).thenReturn(request);
       when(() => request.uri).thenReturn(uri);
@@ -61,8 +47,8 @@ void main() {
       registerFallbackValue(albums);
     });
 
-    group('responds with a 200', () {
-      test('returns a list of albums.', () async {
+    group('GET /albums', () {
+      test('returns a list of albums and responds with a 200', () async {
         when(() => dataSource.getAlbums()).thenAnswer((_) async => albums);
         when(() => request.method).thenReturn(HttpMethod.get);
 
@@ -79,34 +65,6 @@ void main() {
         );
 
         verify(() => dataSource.getAlbums()).called(1);
-      });
-
-      test('returns a list of albums with updated cover.', () async {
-        final extraAlbumData = [
-          {
-            'album_id': 1,
-            'cover_album': 'https://example.com',
-          },
-        ];
-
-        when(() => dataSource.getAlbums()).thenAnswer((_) async => albums);
-        when(
-          () => fileDatabase.readFile<List<dynamic>>(
-            path: any(named: 'path'),
-          ),
-        ).thenAnswer((_) => extraAlbumData);
-        when(() => request.method).thenReturn(HttpMethod.get);
-
-        final response = await route.onRequest(context);
-
-        expect(
-          response.json(),
-          completion(
-            equals(
-              albumsExtraData.map((album) => album.toJson()).toList(),
-            ),
-          ),
-        );
       });
 
       test(

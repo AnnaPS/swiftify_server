@@ -5,7 +5,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:swiftify_data_source/swiftify_data_source.dart';
 import 'package:test/test.dart';
 
-import '../../../../../routes/api/v1/albums/[id].dart' as route;
+import '../../../../../routes/api/v1/favorites/index.dart' as route;
 
 class _MockRequestContext extends Mock implements RequestContext {}
 
@@ -16,19 +16,18 @@ class _MockSwiftifyDataSource extends Mock implements SwiftifyDataSource {}
 class _MockUri extends Mock implements Uri {}
 
 void main() {
-  group('albums by id', () {
+  group('favorites', () {
     late RequestContext context;
     late Request request;
     late Uri uri;
     late SwiftifyDataSource dataSource;
 
-    const songs = [
-      Song(
-        songId: 1,
-        title: 'Song 1',
-        albumId: 23,
-        duration: '3:30',
-        genres: ['pop', 'rock'],
+    const favorites = [
+      Album(
+        albumId: 1,
+        title: 'Album 1',
+        releaseDate: '2021-01-01',
+        coverAlbum: 'https://example.com',
       ),
     ];
 
@@ -45,38 +44,64 @@ void main() {
     });
 
     setUpAll(() {
-      registerFallbackValue(songs);
+      registerFallbackValue(favorites);
     });
 
-    group('GET /albums/[id]', () {
-      test('return a list of songs and respons with a 200', () async {
-        when(() => dataSource.getSongsByAlbum(albumId: any(named: 'albumId')))
-            .thenAnswer((_) async => songs);
+    group('GET /favorites ', () {
+      test('returns a list of favorite albums and responds with a 200',
+          () async {
+        when(() => dataSource.getFavoriteAlbums()).thenReturn(favorites);
         when(() => request.method).thenReturn(HttpMethod.get);
-
-        final response = await route.onRequest(context, '23');
+        final response = await route.onRequest(context);
 
         expect(response.statusCode, equals(HttpStatus.ok));
-        verify(() => dataSource.getSongsByAlbum(albumId: '23')).called(1);
-
         expect(
           response.json(),
           completion(
             equals(
-              songs.map((song) => song.toJson()).toList(),
+              favorites.map((album) => album.toJson()).toList(),
             ),
           ),
         );
+
+        verify(() => dataSource.getFavoriteAlbums()).called(1);
       });
 
       test(
           'return a HttpStatus.internalServerError when '
           'response.json throws an error.', () async {
-        when(() => dataSource.getSongsByAlbum(albumId: any(named: 'albumId')))
-            .thenThrow(Exception());
+        when(() => dataSource.getAlbums()).thenThrow(Exception());
         when(() => request.method).thenReturn(HttpMethod.get);
 
-        final response = await route.onRequest(context, '23');
+        final response = await route.onRequest(context);
+
+        expect(response.statusCode, equals(HttpStatus.internalServerError));
+      });
+    });
+
+    group('POST ', () {
+      test('adds a favorite album and responds with a 201', () async {
+        const album = Album(
+          albumId: 2,
+          title: 'Album 2',
+          releaseDate: '2021-01-01',
+          coverAlbum: 'https://example.com',
+        );
+
+        when(() => request.method).thenReturn(HttpMethod.post);
+        when(() => request.json()).thenAnswer((_) async => album.toJson());
+
+        final response = await route.onRequest(context);
+
+        expect(response.statusCode, equals(HttpStatus.created));
+        verify(() => dataSource.addFavoriteAlbums(album: album)).called(1);
+      });
+
+      test('responds with a 500 when an error occurs', () async {
+        when(() => request.method).thenReturn(HttpMethod.post);
+        when(() => request.json()).thenThrow(Exception());
+
+        final response = await route.onRequest(context);
 
         expect(response.statusCode, equals(HttpStatus.internalServerError));
       });
@@ -86,7 +111,7 @@ void main() {
       test('when method is DELETE', () async {
         when(() => request.method).thenReturn(HttpMethod.delete);
 
-        final response = await route.onRequest(context, '1');
+        final response = await route.onRequest(context);
 
         expect(response.statusCode, equals(HttpStatus.methodNotAllowed));
       });
@@ -94,7 +119,7 @@ void main() {
       test('when method is HEAD', () async {
         when(() => request.method).thenReturn(HttpMethod.head);
 
-        final response = await route.onRequest(context, '1');
+        final response = await route.onRequest(context);
 
         expect(response.statusCode, equals(HttpStatus.methodNotAllowed));
       });
@@ -102,7 +127,7 @@ void main() {
       test('when method is OPTIONS', () async {
         when(() => request.method).thenReturn(HttpMethod.options);
 
-        final response = await route.onRequest(context, '1');
+        final response = await route.onRequest(context);
 
         expect(response.statusCode, equals(HttpStatus.methodNotAllowed));
       });
@@ -110,7 +135,7 @@ void main() {
       test('when method is PATCH', () async {
         when(() => request.method).thenReturn(HttpMethod.patch);
 
-        final response = await route.onRequest(context, '1');
+        final response = await route.onRequest(context);
 
         expect(response.statusCode, equals(HttpStatus.methodNotAllowed));
       });
@@ -118,15 +143,7 @@ void main() {
       test('when method is PUT', () async {
         when(() => request.method).thenReturn(HttpMethod.put);
 
-        final response = await route.onRequest(context, '1');
-
-        expect(response.statusCode, equals(HttpStatus.methodNotAllowed));
-      });
-
-      test('when method is POST', () async {
-        when(() => request.method).thenReturn(HttpMethod.post);
-
-        final response = await route.onRequest(context, '1');
+        final response = await route.onRequest(context);
 
         expect(response.statusCode, equals(HttpStatus.methodNotAllowed));
       });
