@@ -4,26 +4,31 @@ import 'dart:io';
 import 'package:dart_frog/dart_frog.dart';
 import 'package:swiftify_data_source/swiftify_data_source.dart';
 
-FutureOr<Response> onRequest(RequestContext context, String albumId) async {
+FutureOr<Response> onRequest(
+  RequestContext context,
+  String albumId,
+) async {
   switch (context.request.method) {
-    case HttpMethod.get:
-      return _get(context, albumId: albumId);
-    case HttpMethod.put:
     case HttpMethod.delete:
+      return _delete(context, albumId: albumId);
+    case HttpMethod.get:
+    case HttpMethod.post:
     case HttpMethod.head:
     case HttpMethod.options:
     case HttpMethod.patch:
-    case HttpMethod.post:
+    case HttpMethod.put:
       return Response(statusCode: HttpStatus.methodNotAllowed);
   }
 }
 
-Future<Response> _get(RequestContext context, {required String albumId}) async {
+Future<Response> _delete(
+  RequestContext context, {
+  required String albumId,
+}) async {
   try {
-    final dataSource = context.read<SwiftifyDataSource>();
-    final songs = await dataSource.getSongsByAlbum(albumId: albumId);
+    context.read<SwiftifyDataSource>().deleteFavoriteAlbum(albumId: albumId);
 
-    return Response.json(body: songs);
+    return Response(statusCode: HttpStatus.noContent);
   } catch (e) {
     return Response.json(
       body: 'error: $e',

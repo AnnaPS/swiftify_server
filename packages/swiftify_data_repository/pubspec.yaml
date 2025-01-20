@@ -9,6 +9,8 @@ environment:
 dependencies:
   api_client:
     path: ../api_client
+  file_database:
+    path: ../file_database
   swiftify_data_source:
     path: ../swiftify_data_source
 
