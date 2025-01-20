@@ -134,5 +134,42 @@ void main() {
         realFile.deleteSync();
       });
     });
+
+    group('deleteFile', () {
+      test('should delete the file if it exists', () {
+        when(() => file.existsSync()).thenReturn(true);
+        when(() => file.deleteSync()).thenAnswer((_) {});
+
+        fileDatabase.deleteFile(
+          path: 'test/src/fake_test_data.json',
+          file: file,
+        );
+
+        verify(() => file.existsSync()).called(1);
+        verify(() => file.deleteSync()).called(1);
+      });
+
+      test('should not delete the file if it does not exist', () {
+        when(() => file.existsSync()).thenReturn(false);
+
+        fileDatabase.deleteFile(
+          path: 'test/src/fake_test_data.json',
+          file: file,
+        );
+
+        verify(() => file.existsSync()).called(1);
+        verifyNever(() => file.deleteSync());
+      });
+
+      test('should use the path to delete the file if no file is provided', () {
+        final realFile = File('test/src/fake_test_data.json')..createSync();
+
+        fileDatabase.deleteFile(
+          path: 'test/src/fake_test_data.json',
+        );
+
+        expect(realFile.existsSync(), isFalse);
+      });
+    });
   });
 }

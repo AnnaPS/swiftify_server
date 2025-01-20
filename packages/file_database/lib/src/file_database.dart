@@ -33,4 +33,12 @@ class FileDatabase {
       fileToCreate.createSync();
     }
   }
+
+  /// Delete the file.
+  void deleteFile({required String path, File? file}) {
+    final fileToDelete = file ?? File(path);
+    if (fileToDelete.existsSync()) {
+      fileToDelete.deleteSync();
+    }
+  }
 }
