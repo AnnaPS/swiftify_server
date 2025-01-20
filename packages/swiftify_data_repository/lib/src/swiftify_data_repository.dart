@@ -121,7 +121,7 @@ class SwiftifyDataRepository implements SwiftifyDataSource {
     if (favorites == null) {
       _fileDatabase
         ..createFileIfNotExists(path: path)
-        ..writeFile(path: path, content: [album.toJson()]);
+        ..writeFile<List<dynamic>>(path: path, content: [album.toJson()]);
     } else {
       final updatedFavorites = List<Map<String, dynamic>>.from(favorites);
       final albumIndex = updatedFavorites
@@ -137,7 +137,10 @@ class SwiftifyDataRepository implements SwiftifyDataSource {
         );
       }
 
-      _fileDatabase.writeFile(path: path, content: updatedFavorites);
+      _fileDatabase.writeFile<List<dynamic>>(
+        path: path,
+        content: updatedFavorites,
+      );
     }
   }
 
@@ -162,7 +165,8 @@ class SwiftifyDataRepository implements SwiftifyDataSource {
     }
 
     updatedFavorites.removeAt(albumIndex);
-    _fileDatabase.writeFile(path: path, content: updatedFavorites);
+    _fileDatabase.writeFile<List<dynamic>>(
+        path: path, content: updatedFavorites);
 
     // if the file is empty, delete the file
     if (updatedFavorites.isEmpty) {
