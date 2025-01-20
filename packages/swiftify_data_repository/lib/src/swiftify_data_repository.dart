@@ -166,7 +166,9 @@ class SwiftifyDataRepository implements SwiftifyDataSource {
 
     updatedFavorites.removeAt(albumIndex);
     _fileDatabase.writeFile<List<dynamic>>(
-        path: path, content: updatedFavorites);
+      path: path,
+      content: updatedFavorites,
+    );
 
     // if the file is empty, delete the file
     if (updatedFavorites.isEmpty) {
