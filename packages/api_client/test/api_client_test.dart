@@ -55,7 +55,6 @@ void main() {
 
         final data = await apiClient.get<dynamic>(
           '',
-          headers: {'key': 'value'},
         );
         expect(
           data,
