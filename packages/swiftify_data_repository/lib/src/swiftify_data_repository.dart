@@ -26,7 +26,7 @@ class SwiftifyDataRepository implements SwiftifyDataSource {
       path: 'assets/extra_album_data.json',
     );
 
-    final updatedAlbum = List<dynamic>.from(responseBody)
+    final updatedAlbum = List<dynamic>.from(responseBody ?? [])
         .map((albumJson) => Album.fromJson(albumJson as Map<String, dynamic>))
         .toList();
 
@@ -54,6 +54,8 @@ class SwiftifyDataRepository implements SwiftifyDataSource {
     final extraSongData = _fileDatabase.readFile<List<dynamic>>(
       path: 'assets/extra_song_data.json',
     );
+
+    if (responseBody == null) return <Song>[];
 
     final songs = responseBody
         .map((songJson) => Song.fromJson(songJson as Map<String, dynamic>))
@@ -95,7 +97,7 @@ class SwiftifyDataRepository implements SwiftifyDataSource {
   Future<String> getLyricsBySong({required String songId}) async {
     try {
       final data = await _apiClient.get<Map<String, dynamic>>('lyrics/$songId');
-      return data['lyrics'] as String;
+      return data?['lyrics'] as String;
     } catch (e) {
       return '';
     }

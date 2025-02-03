@@ -1,16 +1,11 @@
-import 'dart:async';
-import 'dart:convert';
-import 'dart:io';
-
 import 'package:api_client/api_client.dart';
+import 'package:dio/dio.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:test/test.dart';
 
-class _MockHttpClient extends Mock implements HttpClient {}
+class _MockDio extends Mock implements Dio {}
 
-class _MockHttpClientRequest extends Mock implements HttpClientRequest {}
-
-class _MockHttpClientResponse extends Mock implements HttpClientResponse {}
+class _MockResponse extends Mock implements Response<dynamic> {}
 
 void main() {
   setUpAll(() {
@@ -19,15 +14,18 @@ void main() {
 
   group('ApiClient', () {
     late ApiClient apiClient;
-    late _MockHttpClient httpClient;
-    late _MockHttpClientRequest request;
-    late _MockHttpClientResponse response;
+    late _MockDio dio;
+    late _MockResponse response;
+    const fakeBaseUrl = 'http://baseUrl';
+    const fakeResponseData = {'key': 'value'};
 
     setUp(() {
-      httpClient = _MockHttpClient();
-      request = _MockHttpClientRequest();
-      response = _MockHttpClientResponse();
-      apiClient = ApiClient(httpClient: httpClient);
+      dio = _MockDio();
+      response = _MockResponse();
+      apiClient = ApiClient(dio: dio);
+      when(() => dio.options).thenReturn(
+        BaseOptions(baseUrl: fakeBaseUrl),
+      );
     });
 
     test('can be instantiated', () {
@@ -42,28 +40,53 @@ void main() {
     });
 
     group('get', () {
-      test('returns a Map<String, dynamic> when status code is 200', () async {
-        when(() => httpClient.getUrl(any())).thenAnswer((_) async => request);
-        when(() => request.close()).thenAnswer((_) async => response);
+      test('returns data when status code is 200', () async {
         when(() => response.statusCode).thenReturn(200);
-        when(() => response.transform(utf8.decoder)).thenAnswer(
-          (_) => Stream.value('{"key": "value"}'),
-        );
+        when(() => response.data).thenReturn(fakeResponseData);
 
-        final result = await apiClient.get<Map<String, dynamic>>('');
-        expect(result, {'key': 'value'});
+        when(
+          () => dio.get<dynamic>(
+            any(),
+            data: any(named: 'data'),
+            queryParameters: any(named: 'queryParameters'),
+            options: any(named: 'options'),
+          ),
+        ).thenAnswer((_) async => response);
+
+        final data = await apiClient.get<dynamic>(
+          '',
+          headers: {'key': 'value'},
+        );
+        expect(
+          data,
+          equals(fakeResponseData),
+        );
       });
     });
 
     group('handleHttpError', () {
-      test('throws NetworkException', () {
-        when(() => httpClient.getUrl(any())).thenAnswer((_) async => request);
-        when(() => request.close()).thenAnswer((_) async => response);
-        when(() => response.statusCode).thenReturn(1);
-        when(() => response.transform(utf8.decoder)).thenAnswer(
-          (_) => Stream.value(''),
+      void setUpHttpError(int errorCode) {
+        when(
+          () => dio.get<dynamic>(
+            any(),
+            data: any(named: 'data'),
+            queryParameters: any(named: 'queryParameters'),
+            options: any(named: 'options'),
+          ),
+        ).thenThrow(
+          DioException.badResponse(
+            statusCode: errorCode,
+            requestOptions: RequestOptions(),
+            response: Response(
+              statusCode: errorCode,
+              requestOptions: RequestOptions(),
+            ),
+          ),
         );
+      }
 
+      test('throws NetworkException', () {
+        setUpHttpError(1);
         expect(
           apiClient.get<dynamic>(''),
           throwsA(isA<NetworkException>()),
@@ -73,10 +96,7 @@ void main() {
       test(
           'expected BadRequestException '
           'on 400 response', () async {
-        when(() => httpClient.getUrl(any())).thenAnswer((_) async => request);
-        when(() => request.close()).thenAnswer((_) async => response);
-        when(() => response.statusCode).thenReturn(400);
-
+        setUpHttpError(400);
         expect(
           apiClient.get<dynamic>(''),
           throwsA(isA<BadRequestException>()),
@@ -86,9 +106,7 @@ void main() {
       test(
           'expected UnauthorizedException '
           'on 401 response', () async {
-        when(() => httpClient.getUrl(any())).thenAnswer((_) async => request);
-        when(() => request.close()).thenAnswer((_) async => response);
-        when(() => response.statusCode).thenReturn(401);
+        setUpHttpError(401);
         expect(
           apiClient.get<dynamic>(''),
           throwsA(isA<UnauthorizedException>()),
@@ -98,9 +116,7 @@ void main() {
       test(
           'expected ForbiddenException '
           'on 403 response', () async {
-        when(() => httpClient.getUrl(any())).thenAnswer((_) async => request);
-        when(() => request.close()).thenAnswer((_) async => response);
-        when(() => response.statusCode).thenReturn(403);
+        setUpHttpError(403);
         expect(
           apiClient.get<dynamic>(''),
           throwsA(isA<ForbiddenException>()),
@@ -110,9 +126,7 @@ void main() {
       test(
           'expected NotFoundException '
           'on 404 response', () async {
-        when(() => httpClient.getUrl(any())).thenAnswer((_) async => request);
-        when(() => request.close()).thenAnswer((_) async => response);
-        when(() => response.statusCode).thenReturn(404);
+        setUpHttpError(404);
         expect(
           apiClient.get<dynamic>(''),
           throwsA(isA<NotFoundException>()),
@@ -122,9 +136,7 @@ void main() {
       test(
           'expected InternalServerErrorException '
           'on 500 response', () async {
-        when(() => httpClient.getUrl(any())).thenAnswer((_) async => request);
-        when(() => request.close()).thenAnswer((_) async => response);
-        when(() => response.statusCode).thenReturn(500);
+        setUpHttpError(500);
         expect(
           apiClient.get<dynamic>(''),
           throwsA(isA<InternalServerErrorException>()),

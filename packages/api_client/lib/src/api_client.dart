@@ -1,7 +1,5 @@
-import 'dart:convert';
-import 'dart:io';
-
 import 'package:api_client/api_client.dart';
+import 'package:dio/dio.dart';
 
 /// {@template http_client}
 /// A package to manage Http calls to the API.
@@ -9,27 +7,29 @@ import 'package:api_client/api_client.dart';
 class ApiClient {
   /// {@macro http_client}
   ApiClient({
-    HttpClient? httpClient,
+    Dio? dio,
     String? baseUrl,
-  })  : _httpClient = httpClient ?? HttpClient(),
+  })  : _dio = dio ?? Dio(),
         _baseUrl = baseUrl ?? 'https://taylor-swift-api.sarbo.workers.dev';
 
-  /// The [HttpClient] used to make requests.
-  final HttpClient _httpClient;
+  /// The [Dio] used to make requests.
+  final Dio _dio;
 
   /// Base url for the API
   final String _baseUrl;
 
-  bool _isSuccessful(int statusCode) => statusCode >= 200 && statusCode < 300;
+  bool _isSuccessful(Response<dynamic> response) {
+    final statusCode = response.statusCode ?? -1;
+    return statusCode >= 200 && statusCode < 300;
+  }
 
-  Future<T> _handleResponse<T>(
-    HttpClientResponse response,
-  ) async {
-    if (_isSuccessful(response.statusCode)) {
-      final result = await response.transform(utf8.decoder).join();
-      return jsonDecode(result) as T;
+  T? _handleResponse<T>(Response<T> response) {
+    final data = response.data;
+
+    if (_isSuccessful(response)) {
+      return data;
     } else {
-      throw _handleHttpError(response.statusCode, response, StackTrace.current);
+      throw const DeserializationException.emptyResponseBody();
     }
   }
 
@@ -52,12 +52,28 @@ class ApiClient {
     Error.throwWithStackTrace(exception, stackTrace);
   }
 
-  /// GET request to [path].
-  /// Returns a [Map] with the response body.
-  Future<T> get<T>(String path) async {
-    final uri = Uri.parse('$_baseUrl/$path');
-    final request = await _httpClient.getUrl(uri);
-    final response = await request.close();
+  /// Makes a GET request to the API.
+  Future<T?> get<T>(
+    String path, {
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? queryParameters,
+    Object? body,
+  }) async {
+    late final Response<T> response;
+    try {
+      response = await _dio.get(
+        '$_baseUrl/$path',
+        data: body,
+        queryParameters: queryParameters,
+        options: Options(headers: headers),
+      );
+    } catch (error, stackTrace) {
+      _handleHttpError(
+        (error is DioException) ? error.response?.statusCode ?? -1 : -1,
+        error,
+        stackTrace,
+      );
+    }
 
     return _handleResponse(response);
   }

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:api_client/api_client.dart';
 import 'package:test/test.dart';
 
@@ -58,6 +60,15 @@ void main() {
         expect(
           NotFoundException(exception).toString(),
           equals('[NotFoundException] $exception'),
+        );
+      });
+    });
+
+    group('DeserializationException', () {
+      test('emptyResponseBody', () {
+        expect(
+          DeserializationException.emptyResponseBody().toString(),
+          equals('[DeserializationException] Empty response body'),
         );
       });
     });

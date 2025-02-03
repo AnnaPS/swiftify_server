@@ -75,3 +75,15 @@ class NotFoundException extends ApiException {
   @override
   String toString() => '[NotFoundException] $error';
 }
+
+/// {@template deserialization_exception}
+/// Exception thrown when the response body is empty.
+/// {@endtemplate}
+class DeserializationException extends ApiException {
+  /// Exception thrown when the response body is empty.
+  const DeserializationException.emptyResponseBody()
+      : super('Empty response body');
+
+  @override
+  String toString() => '[DeserializationException] $error';
+}

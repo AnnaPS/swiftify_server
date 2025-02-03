@@ -7,6 +7,7 @@ environment:
   sdk: ^3.6.0
 
 dependencies:
+  dio: ^5.8.0+1
   swiftify_data_source:
     path: ../swiftify_data_source
 
