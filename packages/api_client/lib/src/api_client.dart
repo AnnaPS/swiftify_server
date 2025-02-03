@@ -55,6 +55,7 @@ class ApiClient {
   /// Makes a GET request to the API.
   Future<T?> get<T>(
     String path, {
+    Map<String, dynamic>? headers,
     Map<String, dynamic>? queryParameters,
     Object? body,
   }) async {
@@ -64,13 +65,7 @@ class ApiClient {
         '$_baseUrl/$path',
         data: body,
         queryParameters: queryParameters,
-        options: Options(
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            'Access-Control-Allow-Origin': '*', // This is a CORS issue
-          },
-        ),
+        options: Options(headers: headers),
       );
     } catch (error, stackTrace) {
       _handleHttpError(

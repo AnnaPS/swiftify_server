@@ -8,20 +8,13 @@ FutureOr<Response> onRequest(
   RequestContext context,
   String albumId,
 ) async {
-  switch (context.request.method) {
-    case HttpMethod.delete:
-      return _delete(context, albumId: albumId);
-    case HttpMethod.get:
-    case HttpMethod.post:
-    case HttpMethod.head:
-    case HttpMethod.options:
-    case HttpMethod.patch:
-    case HttpMethod.put:
-      return Response(statusCode: HttpStatus.methodNotAllowed);
-  }
+  return switch (context.request.method) {
+    HttpMethod.delete => _onDelete(context, albumId: albumId),
+    _ => Future.value(Response(statusCode: HttpStatus.methodNotAllowed)),
+  };
 }
 
-Future<Response> _delete(
+Future<Response> _onDelete(
   RequestContext context, {
   required String albumId,
 }) async {
