@@ -9,7 +9,14 @@ class ApiClient {
   ApiClient({
     Dio? dio,
     String? baseUrl,
-  })  : _dio = dio ?? Dio(),
+  })  : _dio = dio ??
+            Dio(
+              BaseOptions(
+                headers: {
+                  'Access-Control-Allow-Origin': '*',
+                },
+              ),
+            ),
         _baseUrl = baseUrl ?? 'https://taylor-swift-api.sarbo.workers.dev';
 
   /// The [Dio] used to make requests.
@@ -65,7 +72,7 @@ class ApiClient {
         '$_baseUrl/$path',
         data: body,
         queryParameters: queryParameters,
-        options: Options(headers: headers),
+        //options: Options(headers: headers),
       );
     } catch (error, stackTrace) {
       _handleHttpError(
