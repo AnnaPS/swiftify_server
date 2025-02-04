@@ -8,6 +8,14 @@ final _swiftifyRepository = SwiftifyDataRepository();
 Handler middleware(Handler handler) {
   return handler
       .use(requestLogger())
-      .use(fromShelfMiddleware(shelf.corsHeaders()))
+      .use(
+        fromShelfMiddleware(
+          shelf.corsHeaders(
+            headers: {
+              shelf.ACCESS_CONTROL_ALLOW_ORIGIN: 'http://localhost:8080/',
+            },
+          ),
+        ),
+      )
       .use(provider<SwiftifyDataSource>((_) => _swiftifyRepository));
 }
