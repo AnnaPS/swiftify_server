@@ -11,17 +11,17 @@ class ApiClient {
     String? baseUrl,
   })  : _dio = dio ??
             Dio(
-              BaseOptions(
-                headers: {
-                  'Access-Control-Allow-Origin': '*',
-                  'Access-Control-Allow-Methods':
-                      'GET, POST, PUT, DELETE, OPTIONS',
-                  'Access-Control-Allow-Headers':
-                      'Origin, Content-Type, X-Auth-Token',
-                  'Content-Type': 'application/json',
-                },
-              ),
-            ),
+                // BaseOptions(
+                //   headers: {
+                //     'Access-Control-Allow-Origin': '*',
+                //     'Access-Control-Allow-Methods':
+                //         'GET, POST, PUT, DELETE, OPTIONS',
+                //     'Access-Control-Allow-Headers':
+                //         'Origin, Content-Type, X-Auth-Token',
+                //     'Content-Type': 'application/json',
+                //   },
+                // ),
+                ),
         _baseUrl = baseUrl ?? 'https://taylor-swift-api.sarbo.workers.dev';
 
   /// The [Dio] used to make requests.
