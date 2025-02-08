@@ -6,18 +6,16 @@ import 'package:swiftify_data_source/swiftify_data_source.dart';
 final _swiftifyRepository = SwiftifyDataRepository();
 
 Handler middleware(Handler handler) {
-  return handler.use(requestLogger()).use((handler) {
-    return (RequestContext context) async {
-      final origin =
-          context.request.headers['origin'] ?? 'http://localhost:5173';
-
-      final response = await handler(context);
-      return response.copyWith(
-        headers: {
-          ...response.headers,
-          shelf.ACCESS_CONTROL_ALLOW_ORIGIN: origin,
-        },
-      );
-    };
-  }).use(provider<SwiftifyDataSource>((_) => _swiftifyRepository));
+  return handler
+      .use(requestLogger())
+      .use(
+        fromShelfMiddleware(
+          shelf.corsHeaders(
+            headers: {
+              shelf.ACCESS_CONTROL_ALLOW_ORIGIN: 'http://localhost:5173/',
+            },
+          ),
+        ),
+      )
+      .use(provider<SwiftifyDataSource>((_) => _swiftifyRepository));
 }
