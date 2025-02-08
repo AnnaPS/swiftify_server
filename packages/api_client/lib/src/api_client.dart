@@ -2,7 +2,7 @@ import 'package:api_client/api_client.dart';
 import 'package:dio/dio.dart';
 
 /// {@template http_client}
-/// A package to manage Http calls to the API.
+/// A package to manage network calls to the API.
 /// {@endtemplate}
 class ApiClient {
   /// {@macro http_client}
