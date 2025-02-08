@@ -12,10 +12,7 @@ Handler middleware(Handler handler) {
         fromShelfMiddleware(
           shelf.corsHeaders(
             headers: {
-              shelf.ACCESS_CONTROL_ALLOW_ORIGIN: '*',
-              shelf.ACCESS_CONTROL_ALLOW_METHODS:
-                  'GET, POST, PUT, DELETE, OPTIONS',
-              shelf.ACCESS_CONTROL_ALLOW_CREDENTIALS: 'true',
+              shelf.ACCESS_CONTROL_ALLOW_ORIGIN: 'http://localhost:5173',
             },
           ),
         ),
