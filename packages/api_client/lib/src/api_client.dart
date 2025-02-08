@@ -66,6 +66,11 @@ class ApiClient {
         '$_baseUrl/$path',
         data: body,
         queryParameters: queryParameters,
+        options: Options(
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+          },
+        ),
       );
     } catch (error, stackTrace) {
       _handleHttpError(
