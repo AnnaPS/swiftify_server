@@ -15,8 +15,6 @@ Handler middleware(Handler handler) {
               shelf.ACCESS_CONTROL_ALLOW_ORIGIN: '*',
               shelf.ACCESS_CONTROL_ALLOW_METHODS:
                   'GET, POST, PUT, DELETE, OPTIONS',
-              shelf.ACCESS_CONTROL_ALLOW_HEADERS:
-                  'Origin, Content-Type, Authorization',
               shelf.ACCESS_CONTROL_ALLOW_CREDENTIALS: 'true',
             },
           ),
