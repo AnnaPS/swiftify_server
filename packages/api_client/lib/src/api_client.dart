@@ -34,6 +34,7 @@ class ApiClient {
   }
 
   /// Handles the statusCode from the API
+  ///
   /// Note: This is a simplified version of a real-world implementation.
   /// In a real-world scenario, you would have more detailed error handling.
   Exception _handleHttpError(
